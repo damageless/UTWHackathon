@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 @property (weak, nonatomic) IBOutlet UITextField *destinationField;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 
 @end
 
@@ -74,7 +75,11 @@
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
 	RKLocatorPosition currentLocation = [robo getLocation];
 	self.locationLabel.text = [NSString stringWithFormat:@"%2f,%2f",currentLocation.x, currentLocation.y];
+	
+	
+	self.stateLabel.text = [robo stateAsString];
 }
+
 
 
 - (void)goButtonPressed

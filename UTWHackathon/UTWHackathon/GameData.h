@@ -12,6 +12,9 @@
 
 @interface GameData : NSObject
 
+@property (copy, nonatomic) NSString *gameName;
+@property (copy, nonatomic) NSString *gameId;
+
 @property (copy, nonatomic) NSString *team0Name;
 @property (copy, nonatomic) UIColor *team0Color;
 
