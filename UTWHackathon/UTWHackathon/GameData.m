@@ -12,33 +12,29 @@
 
 - (GameData *)initWithDictionary:(NSDictionary *)dict
 {
-    for (NSArray *array in dict) {
-        NSLog(@"object: %@", array);
-    }
-/*
-    self.gameName = [dict objectForKey:@"name"];
-    @property (copy, nonatomic) NSString *team0Name;
-    @property (copy, nonatomic) UIColor *team0Color;
-    @property (strong, nonatomic) RKLocatorData *side0Location;
+    NSDictionary *teams = [dict objectForKey:@"teams"];
+
+    NSDictionary *homeTeam = [teams objectForKey:@"home"];
+    self.team0Name = [homeTeam objectForKey:@"name"];
+    NSString *color = [homeTeam objectForKey:@"color"];
+    self.team0Color = [self colorFromHexString:color];
     
-    @property (copy, nonatomic) NSString *team1Name;
-    @property (copy, nonatomic) UIColor *team1Color;
-    @property (strong, nonatomic) RKLocatorData *side1Location;
+    NSDictionary *awayTeam = [teams objectForKey:@"away"];
+    self.team1Name = [awayTeam objectForKey:@"name"];
+    color = [awayTeam objectForKey:@"color"];
+    self.team1Color = [self colorFromHexString:color];
     
-    @property (readonly, nonatomic) RKLocatorPosition *fieldCenterPosition;
-*/
     return self;
 }
 
-- (RKLocatorPosition *)fieldCenterLocation
+- (UIColor *)colorFromHexString:(NSString *)hexString
 {
-    if (self.side0Location && self.side0Location) {
-        
-        
-    }
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
     
-    return nil;
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
-
 
 @end

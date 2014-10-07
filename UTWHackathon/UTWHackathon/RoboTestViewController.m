@@ -68,15 +68,15 @@
 - (void)robotMoved
 {
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
-	float currentLocation = [robo getLocation].x;
-	self.destinationField.text = [NSString stringWithFormat:@"%f",currentLocation];
+	RKLocatorPosition currentLocation = [robo getLocation];
+	self.locationLabel.text = [NSString stringWithFormat:@"%2f,%2f",currentLocation.x, currentLocation.y];
 }
 
 
 - (void)goButtonPressed
 {
 	NSInteger dest = [self.destinationField.text integerValue];
-	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;\
+	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
     [robo setCenter];
 	[robo move:dest];
 }

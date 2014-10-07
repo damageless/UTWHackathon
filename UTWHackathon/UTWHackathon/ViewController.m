@@ -18,6 +18,9 @@
 @interface ViewController () <GameSelectionDelegate>
 
 @property (strong, nonatomic) SRWebSocket *webSocket;
+@property (strong, nonatomic) GameData *currentGameData;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentGameLabel;
 
 @end
 
@@ -63,6 +66,7 @@
 - (IBAction)gameSelectionButtonTapped:(id)sender
 {
     GameSelectionViewController *controller = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    controller.delegate = self;
     
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -155,5 +159,23 @@
 //- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 //- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 //- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
+
+#pragma mark - GameSelectionDelegate
+
+- (void)selectedGameData:(GameData *)gameData
+{
+    self.currentGameData = gameData;
+    [self.currentGameLabel setText:gameData.gameName];
+}
+
+- (NSString *)currentGameName
+{
+    if (self.currentGameData.gameName) {
+        return self.currentGameData.gameName;
+    }
+    
+    return nil;
+}
+
 
 @end

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameData.h"
 
 @protocol GameSelectionDelegate <NSObject>
 
+- (void)selectedGameData:(GameData *)gameData;
+- (NSString *)currentGameName;
 
 @end
 
