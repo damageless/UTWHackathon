@@ -19,6 +19,7 @@
 @property (strong, nonatomic) GameData *currentGameData;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentGameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
 
@@ -31,6 +32,8 @@
     [self connectToRobot];
     
     [self openStreamingConnection];
+    
+    self.startButton.layer.cornerRadius = 20;
 }
 
 -(void)connectToRobot
@@ -66,6 +69,10 @@
     GameSelectionViewController *controller = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)startButtonPressed:(id)sender
+{
 }
 
 - (void)openStreamingConnection
