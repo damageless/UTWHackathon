@@ -18,6 +18,7 @@
 		32AC961419E47BAB008BC9BC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */; };
 		32AC961A19E491CC008BC9BC /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC961919E491CC008BC9BC /* Robot.m */; };
 		45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F72ADF19E4750200106A61 /* RoboTestViewController.m */; };
+		A52FCBF119E4A1D80041E5D3 /* GamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = A52FCBF019E4A1D80041E5D3 /* GamePlay.m */; };
 		D213BD4019E4808F00732F7E /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = D213BD3F19E4808F00732F7E /* GameData.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
@@ -69,6 +70,8 @@
 		32AC961919E491CC008BC9BC /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Robot.m; path = Robot/Robot.m; sourceTree = "<group>"; };
 		45F72ADE19E4750200106A61 /* RoboTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoboTestViewController.h; sourceTree = "<group>"; };
 		45F72ADF19E4750200106A61 /* RoboTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoboTestViewController.m; sourceTree = "<group>"; };
+		A52FCBEF19E4A1D80041E5D3 /* GamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlay.h; sourceTree = "<group>"; };
+		A52FCBF019E4A1D80041E5D3 /* GamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlay.m; sourceTree = "<group>"; };
 		D213BD3E19E4808F00732F7E /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		D213BD3F19E4808F00732F7E /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -179,6 +182,8 @@
 				3229DBBE19E45632002624EA /* Images.xcassets */,
 				3229DBC019E45632002624EA /* LaunchScreen.xib */,
 				3229DBB119E45632002624EA /* Supporting Files */,
+				A52FCBEF19E4A1D80041E5D3 /* GamePlay.h */,
+				A52FCBF019E4A1D80041E5D3 /* GamePlay.m */,
 			);
 			path = UTWHackathon;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			files = (
 				D86EA3E719E48369006DD644 /* AFURLConnectionOperation.m in Sources */,
 				3229DBBA19E45632002624EA /* ViewController.m in Sources */,
+				A52FCBF119E4A1D80041E5D3 /* GamePlay.m in Sources */,
 				D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */,
 				3229DBB719E45632002624EA /* AppDelegate.m in Sources */,
 				D86EA3E919E48369006DD644 /* AFURLResponseSerialization.m in Sources */,

@@ -13,9 +13,11 @@
 #import "AFNetworking.h"
 #import "RoboTestViewController.h"
 #import "GameData.h"
+#import "GamePlay.h"
 
 @interface ViewController () <GameSelectionDelegate>
 
+@property (strong, nonatomic) SRWebSocket *webSocket;
 @property (strong, nonatomic) GameData *currentGameData;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentGameLabel;
@@ -67,6 +69,7 @@
 - (IBAction)gameSelectionButtonTapped:(id)sender
 {
     GameSelectionViewController *controller = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    controller.delegate = self;
     
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -77,26 +80,88 @@
 
 - (void)openStreamingConnection
 {
-    NSString *url = @"http://spherosport.herokuapp.com";
-    NSLog(@"Opening streaming connection...");
+    NSString *url = @"ws://spherosport.herokuapp.com/stream";
+    NSLog(@"Making server request");
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:request];
     socket.delegate = self;
     
     [socket open];
-    //[socket send:@""];
-    
-    //TODO: close socket
-    //[socket close];
+}
+
+- (void)startGameStream:(NSString *)gameId
+{
+    if (self.webSocket) {
+        NSDictionary *startCommand = @{
+                                       @"command": @"start",
+                                       @"game_id": gameId,
+                                       @"speed": @0
+                                       
+                                       };
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:startCommand options:0 error:&error];
+        [self.webSocket send:data];
+
+    }
+}
+
+- (void)stopGameStream
+{
+    if (self.webSocket) {
+        NSDictionary *stopCommand = @{
+                                       @"command": @"stop",
+                                       };
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:stopCommand options:0 error:&error];
+        [self.webSocket send:data];
+        
+    }
 }
     
 #pragma mark - SRWebSocketDelegate
     
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    NSLog(@"received streaming message: %@", message);
+    
+    
+    NSError *error;
+    NSDictionary *object = [NSJSONSerialization
+                             JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding]
+                             options:0
+                             error:&error];
+    
+    if (!error) {
+        GamePlay *play = [[GamePlay alloc] init];
+        play.playDescription = object[@"result_description"];
+        play.locationDescription = object[@"location_description"];
+        play.scoreAway = object[@"away_score"];
+        play.scoreHome = object[@"home_score"];
+        play.quarter = object[@"quarter"];
+        play.down = object[@"down"];
+        play.distance = object[@"distance"];
+        play.yardLine = object[@"yardLine"];
+        play.possession = object[@"posession"];
+        play.type = object[@"type"];
+        play.specialType = object[@"special_type"];
+        
+        NSLog(@"Received Play: %@", play);
+    }
+    
+
 }
 
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@"socket failed with error: %@", error);
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    self.webSocket = webSocket;
+    //TODO: close socket
+    //[socket close];
+
+}
 //optional:
 //- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 //- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
