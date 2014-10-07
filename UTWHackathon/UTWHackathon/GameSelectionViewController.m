@@ -68,6 +68,7 @@
         NSLog(@"JSON: %@", responseObject);
         self.gameData = [[GameData alloc] initWithDictionary:responseObject];
         self.gameData.gameName = gameName;
+        self.gameData.gameId = gameId;
         
         [self.delegate selectedGameData:self.gameData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -21,6 +21,7 @@
 @property (strong, nonatomic) GameData *currentGameData;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentGameLabel;
+@property (nonatomic, copy) GamePlayCallback playCallback;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
@@ -76,6 +77,9 @@
 
 - (IBAction)startButtonPressed:(id)sender
 {
+    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
+        NSLog(@"Received Play: %@", play);
+    }];
 }
 
 - (void)openStreamingConnection
@@ -89,19 +93,21 @@
     [socket open];
 }
 
-- (void)startGameStream:(NSString *)gameId
+- (void)startGameStream:(NSString *)gameId callback:(GamePlayCallback)block
 {
     if (self.webSocket) {
+        self.playCallback = block;
+        
         NSDictionary *startCommand = @{
                                        @"command": @"start",
                                        @"game_id": gameId,
-                                       @"speed": @0
+                                       @"speed": @2
                                        
                                        };
         NSError *error;
         NSData *data = [NSJSONSerialization dataWithJSONObject:startCommand options:0 error:&error];
         [self.webSocket send:data];
-
+        
     }
 }
 
@@ -116,13 +122,14 @@
         [self.webSocket send:data];
         
     }
+    
+    self.playCallback = nil;
 }
     
 #pragma mark - SRWebSocketDelegate
     
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    
     
     NSError *error;
     NSDictionary *object = [NSJSONSerialization
@@ -144,7 +151,11 @@
         play.type = object[@"type"];
         play.specialType = object[@"special_type"];
         
-        NSLog(@"Received Play: %@", play);
+        if (self.playCallback) {
+            self.playCallback(play);
+        }
+        
+
     }
     
 

@@ -64,12 +64,10 @@
                                                    packetFrames:packetFrames
                                                      sensorMask:mask
                                                     packetCount:count];
-     NSLog(@"sendSetDatStreamingCommand");
 }
 
 - (void)handleAsyncData:(RKDeviceAsyncData *)asyncData
 {
-    NSLog(@"Got async data.");
     if ([asyncData isKindOfClass:[RKDeviceSensorsAsyncData class]]) {
         
         RKDeviceSensorsAsyncData *sensorsAsyncData = (RKDeviceSensorsAsyncData *)asyncData;
@@ -82,7 +80,6 @@
         
 
 //        NSLog(@"Quaternion data: %f, %f, %f, %f", quaternionData.quaternions.q0, quaternionData.quaternions.q1, quaternionData.quaternions.q2, quaternionData.quaternions.q3);
-        NSLog(@"Locator data: %f, %f", sensorsData.locatorData.position.x, sensorsData.locatorData.position.y);
     }
 }
 

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 @property (weak, nonatomic) IBOutlet UITextField *destinationField;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 
 @end
 
@@ -35,6 +36,10 @@
 	[self.blueColorButton addTarget:self action:@selector(blueColorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[self.goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
+    
+    [robo setCenter];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,14 +75,17 @@
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
 	RKLocatorPosition currentLocation = [robo getLocation];
 	self.locationLabel.text = [NSString stringWithFormat:@"%2f,%2f",currentLocation.x, currentLocation.y];
+	
+	
+	self.stateLabel.text = [robo stateAsString];
 }
+
 
 
 - (void)goButtonPressed
 {
 	NSInteger dest = [self.destinationField.text integerValue];
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
-    [robo setCenter];
 	[robo move:dest];
 }
 @end

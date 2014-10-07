@@ -10,7 +10,8 @@
 
 @implementation Robot
 
-#define VELOCITY 0.4
+#define VELOCITY 0.2
+#define CORRECTION_AMOUNT 10
 
 -(RKLocatorPosition) getLocation
 {
@@ -26,10 +27,11 @@
 
 -(void)checkShouldStop
 {
-    if ((_state == Forward && _locatorData.position.y > _destination) ||
-        (_state == Backward && _locatorData.position.y < _destination))
+    if ((_state == Forward && _locatorData.position.y >= _destination) ||
+        (_state == Backward && _locatorData.position.y <= _destination))
     {
         // stop
+        NSLog(@"%f", self.getLocation.y);
         [RKRollCommand sendStop];
         _state = Stop;
     }
@@ -55,4 +57,22 @@
     NSLog(@"New center set.");
 }
 
+- (NSString *)stateAsString
+{
+	NSString* string;
+	switch (self.state) {
+		case Stop:
+			string = @"Stop";
+			break;
+		case Forward:
+			string = @"Forward";
+			break;
+		case Backward:
+			string = @"Backward";
+			break;
+  
+	}
+    
+    return string;
+}
 @end

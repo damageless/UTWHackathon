@@ -12,9 +12,9 @@
 #define RobotMoveNotification @"RobotMoved"
 
 typedef enum {
+    Stop,
     Forward,
-    Backward,
-    Stop = 0
+    Backward
 } State;
 
 @interface Robot : NSObject
@@ -28,5 +28,5 @@ typedef enum {
 -(void) move: (NSInteger) x;
 -(void) setCenter;
 -(RKLocatorPosition) getLocation;
-
+- (NSString *)stateAsString;
 @end
