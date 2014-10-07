@@ -72,5 +72,7 @@
 			break;
   
 	}
+    
+    return string;
 }
 @end
