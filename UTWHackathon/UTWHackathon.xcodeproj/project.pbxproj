@@ -20,6 +20,7 @@
 		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
 		D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */; };
+		D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		D2DBC98119E46CDB00B5E398 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RobotUIKit.bundle; sourceTree = "<group>"; };
 		D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
+		D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
+		D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSelectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				3229DBC019E45632002624EA /* LaunchScreen.xib */,
 				D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */,
 				D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */,
+				D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */,
+				D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */,
 				3229DBB119E45632002624EA /* Supporting Files */,
 			);
 			path = UTWHackathon;
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3229DBBA19E45632002624EA /* ViewController.m in Sources */,
+				D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */,
 				3229DBB719E45632002624EA /* AppDelegate.m in Sources */,
 				3229DBB419E45632002624EA /* main.m in Sources */,
 				D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */,
@@ -391,7 +397,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/scott/src/UTWHackathon/orbotix-Sphero-iOS-SDK-642e439/frameworks",
 					"$(PROJECT_DIR)/UTWHackathon",
 					"$(PROJECT_DIR)/frameworks",
 				);
@@ -413,7 +418,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/scott/src/UTWHackathon/orbotix-Sphero-iOS-SDK-642e439/frameworks",
 					"$(PROJECT_DIR)/UTWHackathon",
 					"$(PROJECT_DIR)/frameworks",
 				);
