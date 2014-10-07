@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRWebSocket.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SRWebSocketDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *robotConnectedLabel;
 - (void)handleRobotOnline;
 

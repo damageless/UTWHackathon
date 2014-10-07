@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
 #import <RobotKit/RobotKit.h>
-#import "SocketRocket/SRWebSocket.h"
 #import "Robot/Robot.h"
+#import "AFNetworking.h"
 #import "RoboTestViewController.h"
+#import "GameData.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
@@ -30,7 +30,21 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
     [self connectToRobot];
     
+    [self openStreamingConnection];
+    [self getGameList];
+}
     
+- (void)getGameList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        for (NSDictionary *dict in responseObject) {
+//            GameData *game = [GameData ]
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 -(void)connectToRobot
@@ -54,31 +68,50 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)gameSelectionButtonButtonTapped:(id)sender
-{
-    GameSelectionViewController *gameSelectionVC = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
-    gameSelectionVC.delegate = self;
-    
-    [self.navigationController pushViewController:gameSelectionVC animated:YES];
-}
-
 - (IBAction)testSpheroButtonTapped:(id)sender
 {
     RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RoboTest"];
-    
+    roboTestVC.delegate = self;
+
     [self.navigationController pushViewController:roboTestVC animated:YES];
 }
 
-- (IBAction)calibrateFieldButtonTapped:(id)sender
+- (void)setSide0:(RKQuaternionData *)side0Location
 {
-    CalibrateFieldViewController *calibrateFieldVC = (CalibrateFieldViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalibrateField"];
-    calibrateFieldVC.delegate = self;
     
-    
-    
-    [self.navigationController pushViewController:calibrateFieldVC animated:YES];
 }
 
+- (void)setSide1:(RKQuaternionData *)side1Location
+{
+    
+}
+
+
+- (void)openStreamingConnection
+{
+    NSString *url = @"http://spherosport.herokuapp.com/games";
+    NSLog(@"Making server request");
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:request];
+    socket.delegate = self;
+    
+    [socket open];
+    //[socket send:@""];
+    
+    //TODO: close socket
+    //[socket close];
+}
+    
+#pragma mark - SRWebSocketDelegate
+    
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"received streaming message: %@", message);
+}
+
+//optional:
+//- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
+//- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
+//- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 
 @end
