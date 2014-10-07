@@ -25,5 +25,6 @@ typedef enum {
 
 -(void) move: (int) x;
 -(void) setCenter;
+-(RKLocatorPosition) getLocation;
 
 @end
