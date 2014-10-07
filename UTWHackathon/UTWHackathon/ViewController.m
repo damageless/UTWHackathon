@@ -12,6 +12,7 @@
 #import "Robot/Robot.h"
 #import "AFNetworking.h"
 #import "RoboTestViewController.h"
+#import "GameData.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
@@ -38,6 +39,9 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        for (NSDictionary *dict in responseObject) {
+//            GameData *game = [GameData ]
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
