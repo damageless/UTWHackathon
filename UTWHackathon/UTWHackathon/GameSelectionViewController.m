@@ -31,8 +31,6 @@
     self.tableView.delegate = self;
     self.gamePreviewList = [NSMutableArray array];
     [self getGameList];
-    
-    [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
 }
 
 - (void)didReceiveMemoryWarning {
