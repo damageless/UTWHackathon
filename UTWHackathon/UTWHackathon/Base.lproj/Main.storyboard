@@ -33,19 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvN-Gj-O2u">
-                                <rect key="frame" x="265" y="502" width="71" height="30"/>
-                                <state key="normal" title="Set Side 0">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANi-hP-mLj">
-                                <rect key="frame" x="265" y="540" width="71" height="30"/>
-                                <state key="normal" title="Set Side 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGR-7k-qwd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGR-7k-qwd">
                                 <rect key="frame" x="267" y="99" width="67" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="W4T-1E-gnl"/>
@@ -55,45 +43,51 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oik-Bz-KDW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oik-Bz-KDW">
                                 <rect key="frame" x="272" y="170" width="57" height="30"/>
                                 <state key="normal" title="Forward">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-5M-jlH">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-5M-jlH">
                                 <rect key="frame" x="266" y="235" width="69" height="30"/>
                                 <state key="normal" title="Backward">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reD-xZ-Lk8">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reD-xZ-Lk8">
                                 <rect key="frame" x="282" y="298" width="33" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoY-Vx-Bm3">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoY-Vx-Bm3">
                                 <rect key="frame" x="285" y="354" width="30" height="30"/>
                                 <state key="normal" title="Red">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-m0-tbP">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-m0-tbP">
                                 <rect key="frame" x="284" y="408" width="31" height="30"/>
                                 <state key="normal" title="Blue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGS-mv-s7V">
+                                <rect key="frame" x="250" y="464" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-g2-cU8">
+                                <rect key="frame" x="277" y="518" width="46" height="30"/>
+                                <state key="normal" title="Go">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ANi-hP-mLj" firstAttribute="leading" secondItem="KvN-Gj-O2u" secondAttribute="leading" id="0xX-WS-oMu"/>
                             <constraint firstItem="eLf-5M-jlH" firstAttribute="top" secondItem="oik-Bz-KDW" secondAttribute="bottom" constant="35" id="4Sw-ds-tpw"/>
-                            <constraint firstItem="KvN-Gj-O2u" firstAttribute="top" secondItem="aaq-m0-tbP" secondAttribute="bottom" constant="64" id="7uo-W6-vyV"/>
-                            <constraint firstItem="ANi-hP-mLj" firstAttribute="top" secondItem="KvN-Gj-O2u" secondAttribute="bottom" constant="8" symbolic="YES" id="Aoi-78-B38"/>
-                            <constraint firstItem="6f6-uS-oJ7" firstAttribute="top" secondItem="ANi-hP-mLj" secondAttribute="bottom" constant="30" id="OVU-vC-yZ5"/>
-                            <constraint firstItem="KvN-Gj-O2u" firstAttribute="centerX" secondItem="OoY-Vx-Bm3" secondAttribute="centerX" id="Olh-dL-ZuE"/>
                             <constraint firstItem="OoY-Vx-Bm3" firstAttribute="centerX" secondItem="eLf-5M-jlH" secondAttribute="centerX" id="Q8W-vy-vlP"/>
                             <constraint firstItem="aaq-m0-tbP" firstAttribute="trailing" secondItem="OoY-Vx-Bm3" secondAttribute="trailing" id="Xtq-BS-VQF"/>
                             <constraint firstItem="oik-Bz-KDW" firstAttribute="centerX" secondItem="eLf-5M-jlH" secondAttribute="centerX" id="bo8-vU-6C2"/>
@@ -103,13 +97,14 @@
                             <constraint firstItem="OoY-Vx-Bm3" firstAttribute="trailing" secondItem="reD-xZ-Lk8" secondAttribute="trailing" id="oc3-9R-O6o"/>
                             <constraint firstItem="oik-Bz-KDW" firstAttribute="top" secondItem="jGR-7k-qwd" secondAttribute="bottom" constant="50" id="p3G-kg-lhL"/>
                             <constraint firstItem="OoY-Vx-Bm3" firstAttribute="top" secondItem="reD-xZ-Lk8" secondAttribute="bottom" constant="26" id="tRK-Ra-A8c"/>
-                            <constraint firstItem="ANi-hP-mLj" firstAttribute="centerX" secondItem="nqF-mh-4AY" secondAttribute="centerX" id="xiw-nv-fGH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backwardButton" destination="eLf-5M-jlH" id="Sny-t2-eK0"/>
                         <outlet property="blueColorButton" destination="aaq-m0-tbP" id="CuM-zp-NCp"/>
+                        <outlet property="destinationField" destination="UGS-mv-s7V" id="Gdz-8e-Z68"/>
                         <outlet property="forwardButton" destination="oik-Bz-KDW" id="TjX-hE-c6f"/>
+                        <outlet property="goButton" destination="kv1-g2-cU8" id="AA7-ih-h5k"/>
                         <outlet property="locationLabel" destination="jGR-7k-qwd" id="b5b-3g-6W0"/>
                         <outlet property="redColorButton" destination="OoY-Vx-Bm3" id="Rhf-KL-NaP"/>
                         <outlet property="stopButton" destination="reD-xZ-Lk8" id="cVg-IC-jd8"/>
@@ -132,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot is not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-nA-vOV">
-                                <rect key="frame" x="210" y="174" width="180" height="20.5"/>
+                                <rect key="frame" x="210" y="174" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
