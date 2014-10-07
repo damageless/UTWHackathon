@@ -14,6 +14,7 @@
 		3229DBBF19E45632002624EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBBE19E45632002624EA /* Images.xcassets */; };
 		3229DBC219E45632002624EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBC019E45632002624EA /* LaunchScreen.xib */; };
 		3229DBCE19E45632002624EA /* UTWHackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3229DBCD19E45632002624EA /* UTWHackathonTests.m */; };
+		45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F72ADF19E4750200106A61 /* RoboTestViewController.m */; };
 		D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
@@ -47,6 +48,8 @@
 		3229DBCD19E45632002624EA /* UTWHackathonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTWHackathonTests.m; sourceTree = "<group>"; };
 		32AC960D19E471C4008BC9BC /* RobotControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotControl.h; path = Robot/RobotControl.h; sourceTree = "<group>"; };
 		32AC960E19E471D1008BC9BC /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
+		45F72ADE19E4750200106A61 /* RoboTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoboTestViewController.h; sourceTree = "<group>"; };
+		45F72ADF19E4750200106A61 /* RoboTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoboTestViewController.m; sourceTree = "<group>"; };
 		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
 		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,8 @@
 				3229DBB619E45632002624EA /* AppDelegate.m */,
 				3229DBB819E45632002624EA /* ViewController.h */,
 				3229DBB919E45632002624EA /* ViewController.m */,
+				45F72ADE19E4750200106A61 /* RoboTestViewController.h */,
+				45F72ADF19E4750200106A61 /* RoboTestViewController.m */,
 				3229DBBB19E45632002624EA /* Main.storyboard */,
 				3229DBBE19E45632002624EA /* Images.xcassets */,
 				3229DBC019E45632002624EA /* LaunchScreen.xib */,
@@ -258,6 +263,7 @@
 				3229DBB719E45632002624EA /* AppDelegate.m in Sources */,
 				3229DBB419E45632002624EA /* main.m in Sources */,
 				D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */,
+				45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
