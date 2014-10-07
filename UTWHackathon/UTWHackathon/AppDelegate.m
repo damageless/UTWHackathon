@@ -53,7 +53,7 @@
 }
 
 -(void)sendSetDataStreamingCommand {
-    RKDataStreamingMask mask = RKDataStreamingMaskQuaternionAll;
+    RKDataStreamingMask mask = RKDataStreamingMaskAccelerometerFilteredAll | RKDataStreamingMaskQuaternionAll;
     
     uint16_t divisor = 40;
     uint16_t packetFrames = 1;
@@ -75,8 +75,10 @@
         RKDeviceSensorsData *sensorsData = [sensorsAsyncData.dataFrames lastObject];
         RKQuaternionData *quaternionData = sensorsData.quaternionData;
         
-        self.robot.location = quaternionData;
-        NSLog(@"Quaternion data: %f, %f, %f, %f", quaternionData.quaternions.q0, quaternionData.quaternions.q1, quaternionData.quaternions.q2, quaternionData.quaternions.q3);
+        self.robot.quaternion = quaternionData;
+        self.robot.accelerometerData = sensorsData.accelerometerData;
+//        NSLog(@"Quaternion data: %f, %f, %f, %f", quaternionData.quaternions.q0, quaternionData.quaternions.q1, quaternionData.quaternions.q2, quaternionData.quaternions.q3);
+        NSLog(@"Accelerometer data: %f, %f, %f", self.robot.accelerometerData.acceleration.x, self.robot.accelerometerData.acceleration.y, self.robot.accelerometerData.acceleration.z);
     }
 }
 
