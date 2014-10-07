@@ -10,7 +10,8 @@
 
 @implementation Robot
 
-#define VELOCITY 0.1
+#define VELOCITY 0.3
+#define CORRECTION_AMOUNT 10
 
 -(RKLocatorPosition) getLocation
 {
@@ -26,8 +27,8 @@
 
 -(void)checkShouldStop
 {
-    if ((_state == Forward && _locatorData.position.y > _destination) ||
-        (_state == Backward && _locatorData.position.y < _destination))
+    if ((_state == Forward && _locatorData.position.y > _destination-CORRECTION_AMOUNT) ||
+        (_state == Backward && _locatorData.position.y < _destination+CORRECTION_AMOUNT))
     {
         // stop
         [RKRollCommand sendStop];
