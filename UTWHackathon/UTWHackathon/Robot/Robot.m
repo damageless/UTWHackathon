@@ -20,6 +20,7 @@
 -(void)setLocatorData:(RKLocatorData *)locatorData
 {
     _locatorData = locatorData;
+	[[NSNotificationCenter defaultCenter] postNotificationName:RobotMoveNotification object:nil];
     [self checkShouldStop];
 }
 
