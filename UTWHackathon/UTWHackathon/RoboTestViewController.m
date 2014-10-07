@@ -8,6 +8,7 @@
 
 #import "RoboTestViewController.h"
 #import <RobotKit/RobotKit.h>
+#import "AppDelegate.h"
 
 @interface RoboTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
@@ -59,14 +60,21 @@
 
 - (IBAction)setSide0ButtonTapped:(id)sender
 {
-    [self.delegate setSide0:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+//    if (appDelegate.robot.) {
+//        [self.delegate setSide0:appDelegate.robot.quaternion];
+//    }
     
 }
 
 - (IBAction)setSide1ButtonTapped:(id)sender
 {
-    [self.delegate setSide1:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+//    if (appDelegate.robot.quaternion) {
+//        [self.delegate setSide1:appDelegate.robot.quaternion];
+//    }
 }
 
 @end

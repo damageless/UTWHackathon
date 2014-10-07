@@ -16,9 +16,9 @@
 @property (copy, nonatomic) NSString *team0Name;
 @property (copy, nonatomic) NSString *team1Name;
 
-@property (strong, nonatomic) RKQuaternionData *side0Location;
-@property (strong, nonatomic) RKQuaternionData *side1Location;
-@property (strong, nonatomic) RKQuaternionData *fieldCenterLocation;
+@property (strong, nonatomic) RKLocatorData *side0Location;
+@property (strong, nonatomic) RKLocatorData *side1Location;
+@property (readonly, nonatomic) RKLocatorPosition *fieldCenterPosition;
 
 
 @end

@@ -11,5 +11,15 @@
 @implementation GameData
 
 
+- (RKLocatorPosition *)fieldCenterLocation
+{
+    if (self.side0Location && self.side0Location) {
+        
+        
+    }
+    
+    return nil;
+}
+
 
 @end
