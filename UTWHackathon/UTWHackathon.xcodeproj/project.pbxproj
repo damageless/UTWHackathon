@@ -16,9 +16,9 @@
 		3229DBCE19E45632002624EA /* UTWHackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3229DBCD19E45632002624EA /* UTWHackathonTests.m */; };
 		D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
-		D2DBC98A19E46D2A00B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98719E46D2900B5E398 /* RobotKit.framework */; };
-		D2DBC98B19E46D2A00B5E398 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98819E46D2A00B5E398 /* RobotUIKit.bundle */; };
-		D2DBC98C19E46D2A00B5E398 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98919E46D2A00B5E398 /* RobotUIKit.framework */; };
+		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
+		D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
+		D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,16 +47,11 @@
 		3229DBCD19E45632002624EA /* UTWHackathonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTWHackathonTests.m; sourceTree = "<group>"; };
 		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
 		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
-		D2DBC97019E469C100B5E398 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = "../orbotix-Sphero-iOS-SDK-642e439/frameworks/RobotKit.framework"; sourceTree = "<group>"; };
-		D2DBC97119E469C100B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = "../orbotix-Sphero-iOS-SDK-642e439/frameworks/RobotUIKit.framework"; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D2DBC98119E46CDB00B5E398 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RobotUIKit.bundle; sourceTree = "<group>"; };
 		D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
-		D2DBC98719E46D2900B5E398 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = frameworks/RobotKit.framework; sourceTree = "<group>"; };
-		D2DBC98819E46D2A00B5E398 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
-		D2DBC98919E46D2A00B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2DBC98A19E46D2A00B5E398 /* RobotKit.framework in Frameworks */,
-				D2DBC98B19E46D2A00B5E398 /* RobotUIKit.bundle in Frameworks */,
-				D2DBC98C19E46D2A00B5E398 /* RobotUIKit.framework in Frameworks */,
+				D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */,
+				D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */,
+				D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +78,6 @@
 		3229DBA519E45632002624EA = {
 			isa = PBXGroup;
 			children = (
-				D2DBC98719E46D2900B5E398 /* RobotKit.framework */,
-				D2DBC98819E46D2A00B5E398 /* RobotUIKit.bundle */,
-				D2DBC98919E46D2A00B5E398 /* RobotUIKit.framework */,
-				D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */,
-				D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */,
-				D2DBC97019E469C100B5E398 /* RobotKit.framework */,
-				D2DBC97119E469C100B5E398 /* RobotUIKit.framework */,
 				3229DBB019E45632002624EA /* UTWHackathon */,
 				3229DBCA19E45632002624EA /* UTWHackathonTests */,
 				3229DBAF19E45632002624EA /* Products */,
@@ -125,6 +113,8 @@
 		3229DBB119E45632002624EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */,
+				D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */,
 				D2DBC98119E46CDB00B5E398 /* RobotKit.framework */,
 				D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */,
 				D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */,
