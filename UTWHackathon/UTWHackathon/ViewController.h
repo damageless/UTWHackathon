@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *robotConnectedLabel;
 - (void)handleRobotOnline;
 
+- (void)startGameStream:(NSString *)gameId;
+- (void)stopGameStream;
+
 @end
 
