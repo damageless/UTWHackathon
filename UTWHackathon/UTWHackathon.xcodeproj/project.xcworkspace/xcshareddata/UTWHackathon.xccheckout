@@ -5,13 +5,15 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>86C0DADF-D493-4B0B-A89B-592D2BFEC35E</string>
+	<string>AB98965D-D57B-4845-8E5B-DC50F9E1A525</string>
 	<key>IDESourceControlProjectName</key>
 	<string>UTWHackathon</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>30EAA3043975BC1D870CB6577C6491C465EE35E3</key>
-		<string>github.com:damageless/UTWHackathon.git</string>
+		<string>https://github.com/damageless/UTWHackathon.git</string>
+		<key>ABB939127996C66F7E852A780552ADEEF03C6B13</key>
+		<string>https://github.com/square/SocketRocket.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>UTWHackathon/UTWHackathon.xcodeproj</string>
@@ -19,15 +21,25 @@
 	<dict>
 		<key>30EAA3043975BC1D870CB6577C6491C465EE35E3</key>
 		<string>../../..</string>
+		<key>ABB939127996C66F7E852A780552ADEEF03C6B13</key>
+		<string>../../../../SocketRocket</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:damageless/UTWHackathon.git</string>
+	<string>https://github.com/damageless/UTWHackathon.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>30EAA3043975BC1D870CB6577C6491C465EE35E3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ABB939127996C66F7E852A780552ADEEF03C6B13</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SocketRocket</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

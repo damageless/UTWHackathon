@@ -10,8 +10,8 @@
 #import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
 #import <RobotKit/RobotKit.h>
-#import "SocketRocket/SRWebSocket.h"
 #import "Robot/Robot.h"
+#import "AFNetworking.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
@@ -28,6 +28,19 @@
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
     [self connectToRobot];
+    
+    [self openStreamingConnection];
+    [self getGameList];
+}
+
+- (void)getGameList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 -(void)connectToRobot
@@ -70,6 +83,33 @@
     
     [self.navigationController pushViewController:calibrateFieldVC animated:YES];
 }
+
+- (void)openStreamingConnection
+{
+    NSString *url = @"http://spherosport.herokuapp.com/games";
+    NSLog(@"Making server request");
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:request];
+    socket.delegate = self;
+    
+    [socket open];
+    //[socket send:@""];
+    
+    //TODO: close socket
+    //[socket close];
+}
+
+#pragma mark - SRWebSocketDelegate
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"received streaming message: %@", message);
+}
+
+//optional:
+//- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
+//- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
+//- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 
 
 @end
