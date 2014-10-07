@@ -63,6 +63,9 @@
 
 - (void)goButtonPressed
 {
+	NSInteger dest = [self.destinationField.text integerValue];
+	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication]).robot;
+	[robo move:dest];
 	
 }
 @end
