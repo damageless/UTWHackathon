@@ -5,14 +5,25 @@
 //  Created by Adam Gessel on 10/7/14.
 //  Copyright (c) 2014 TradeStation. All rights reserved.
 //
+
 #import <Foundation/Foundation.h>
+#import <RobotKit/RobotKit.h>
 
-@interface Robot : NSObject {
-}
+typedef enum {
+    Forward,
+    Backward,
+    Stop = 0
+} State;
 
-@property (assign, nonatomic) RKQuaternionData* quaternion;
-@property (assign, nonatomic) RKAccelerometerData* accelerometerData;
-@property (assign, nonatomic) RKLocatorData* locatorData;
+@interface Robot : NSObject
+@property (strong, nonatomic) RKQuaternionData* quaternion;
+@property (strong, nonatomic) RKAccelerometerData* accelerometerData;
+@property (strong, nonatomic) RKLocatorData* locatorData;
 @property (assign, nonatomic) BOOL isOnline;
+@property (assign, nonatomic) State state;
+@property (assign, nonatomic) int destination;
+
+-(void) move: (int) x;
+-(void) setCenter;
 
 @end
