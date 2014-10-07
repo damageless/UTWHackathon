@@ -12,10 +12,12 @@
 #import "GamePreviewData.h"
 #import "GameData.h"
 
-@interface GameSelectionViewController ()
+@interface GameSelectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *gamePreviewList;
 @property (strong, nonatomic) GameData *gameData;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -25,6 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.gamePreviewList = [NSMutableArray array];
     [self getGameList];
     
     [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
@@ -40,10 +45,13 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        for (NSDictionary *dict in responseObject) {
+        NSArray *games = [responseObject objectForKey:@"games"];
+        for (NSDictionary *dict in games) {
             GamePreviewData *preview = [[GamePreviewData alloc] initWithDictionary:dict];
             [self.gamePreviewList addObject:preview];
         }
+        
+        [self didFinishFetchingGameList];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -59,6 +67,31 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)didFinishFetchingGameList
+{
+    [self.tableView reloadData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.gamePreviewList.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellReuseIdentifier = @"gameCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
+    }
+    
+    GamePreviewData *gamePreview = [self.gamePreviewList objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = gamePreview.gameName;
+    
+    return cell;
 }
 
 @end
