@@ -37,6 +37,7 @@
 		D86EA3E819E48369006DD644 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DD19E48369006DD644 /* AFURLRequestSerialization.m */; };
 		D86EA3E919E48369006DD644 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */; };
 		D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3E119E48369006DD644 /* AFURLSessionManager.m */; };
+		D86EA3ED19E489E1006DD644 /* GamePreviewData.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3EC19E489E1006DD644 /* GamePreviewData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		D86EA3E019E48369006DD644 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		D86EA3E119E48369006DD644 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		D86EA3EB19E489E1006DD644 /* GamePreviewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePreviewData.h; sourceTree = "<group>"; };
+		D86EA3EC19E489E1006DD644 /* GamePreviewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePreviewData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,15 +166,17 @@
 				3229DBB619E45632002624EA /* AppDelegate.m */,
 				D213BD3E19E4808F00732F7E /* GameData.h */,
 				D213BD3F19E4808F00732F7E /* GameData.m */,
+				D86EA3EB19E489E1006DD644 /* GamePreviewData.h */,
+				D86EA3EC19E489E1006DD644 /* GamePreviewData.m */,
 				3229DBB819E45632002624EA /* ViewController.h */,
 				3229DBB919E45632002624EA /* ViewController.m */,
+				D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */,
+				D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */,
 				45F72ADE19E4750200106A61 /* RoboTestViewController.h */,
 				45F72ADF19E4750200106A61 /* RoboTestViewController.m */,
 				3229DBBB19E45632002624EA /* Main.storyboard */,
 				3229DBBE19E45632002624EA /* Images.xcassets */,
 				3229DBC019E45632002624EA /* LaunchScreen.xib */,
-				D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */,
-				D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */,
 				3229DBB119E45632002624EA /* Supporting Files */,
 			);
 			path = UTWHackathon;
@@ -366,6 +371,7 @@
 				D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */,
 				D86EA3CD19E48080006DD644 /* SRWebSocket.m in Sources */,
 				D86EA3E419E48369006DD644 /* AFHTTPSessionManager.m in Sources */,
+				D86EA3ED19E489E1006DD644 /* GamePreviewData.m in Sources */,
 				D213BD4019E4808F00732F7E /* GameData.m in Sources */,
 				45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */,
 				D86EA3E519E48369006DD644 /* AFNetworkReachabilityManager.m in Sources */,

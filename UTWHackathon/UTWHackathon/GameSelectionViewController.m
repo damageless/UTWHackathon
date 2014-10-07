@@ -8,8 +8,12 @@
 
 #import "GameSelectionViewController.h"
 #import <RobotKit/RobotKit.h>
+#import "AFNetworking.h"
+#import "GamePreviewData.h"
 
 @interface GameSelectionViewController ()
+
+@property (strong, nonatomic) NSMutableArray *gamePreviewList;
 
 @end
 
@@ -19,12 +23,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
+    [self getGameList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)getGameList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        for (NSDictionary *dict in responseObject) {
+            GamePreviewData *preview = [[GamePreviewData alloc] initWithDictionary:dict];
+            [self.gamePreviewList addObject:preview];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation
