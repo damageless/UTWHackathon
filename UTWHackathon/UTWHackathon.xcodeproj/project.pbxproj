@@ -45,6 +45,8 @@
 		3229DBC719E45632002624EA /* UTWHackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTWHackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3229DBCC19E45632002624EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3229DBCD19E45632002624EA /* UTWHackathonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTWHackathonTests.m; sourceTree = "<group>"; };
+		32AC960D19E471C4008BC9BC /* RobotControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotControl.h; path = Robot/RobotControl.h; sourceTree = "<group>"; };
+		32AC960E19E471D1008BC9BC /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
 		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
 		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,7 @@
 		3229DBB019E45632002624EA /* UTWHackathon */ = {
 			isa = PBXGroup;
 			children = (
+				32AC960C19E471BA008BC9BC /* Robot */,
 				3229DBB519E45632002624EA /* AppDelegate.h */,
 				3229DBB619E45632002624EA /* AppDelegate.m */,
 				3229DBB819E45632002624EA /* ViewController.h */,
@@ -139,6 +142,15 @@
 				3229DBCC19E45632002624EA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32AC960C19E471BA008BC9BC /* Robot */ = {
+			isa = PBXGroup;
+			children = (
+				32AC960D19E471C4008BC9BC /* RobotControl.h */,
+				32AC960E19E471D1008BC9BC /* Robot.h */,
+			);
+			name = Robot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

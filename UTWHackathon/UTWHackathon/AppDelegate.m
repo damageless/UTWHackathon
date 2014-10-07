@@ -23,6 +23,8 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKDeviceConnectionOnlineNotification object:nil]; [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green:0.0 blue:0.0]; [[RKRobotProvider sharedRobotProvider] closeRobotConnection];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -41,5 +43,28 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(void)connectToRobot
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline:) name:RKDeviceConnectionOnlineNotification object:nil];
+    if ([[RKRobotProvider sharedRobotProvider] isRobotUnderControl])
+    {
+        [[RKRobotProvider sharedRobotProvider] openRobotConnection];
+    }else
+    {
+        [[RKRobotProvider sharedRobotProvider] controlConnectedRobot];
+    }
+}
+
+- (void)handleRobotOnline
+{
+    /*The robot is now online, we can begin sending commands*/
+    if(!robotOnline) {
+        /* Send commands to Sphero Here: */
+        
+    }
+    robotOnline = YES;
+}
+
 
 @end
