@@ -8,13 +8,11 @@
 
 #import "ViewController.h"
 #import "CalibrateFieldViewController.h"
+#import "GameSelectionViewController.h"
 
-
-@interface ViewController () <CalibrateFieldDelegate>
+@interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *calibrateFieldButton;
-
-@property (strong, nonatomic) CalibrateFieldViewController *calibrateFieldVC;
 
 - (IBAction)calibrateFieldButtonTapped:(id)sender;
 
@@ -33,11 +31,18 @@
 }
 
 
+- (IBAction)gameSelectionButtonButtonTapped:(id)sender
+{
+    GameSelectionViewController *gameSelectionVC = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    gameSelectionVC.delegate = self;
+    
+    [self.navigationController pushViewController:gameSelectionVC animated:YES];
+}
+
 - (IBAction)calibrateFieldButtonTapped:(id)sender
 {
-    UIViewController *calibrateFieldVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CalibrateField"];
-    self.calibrateFieldVC = (CalibrateFieldViewController *)calibrateFieldVC;
-    self.calibrateFieldVC.delegate = self;
+    CalibrateFieldViewController *calibrateFieldVC = (CalibrateFieldViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalibrateField"];
+    calibrateFieldVC.delegate = self;
     
     
     
