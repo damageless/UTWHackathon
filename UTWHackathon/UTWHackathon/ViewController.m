@@ -77,6 +77,9 @@
 
 - (IBAction)startButtonPressed:(id)sender
 {
+    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
+        NSLog(@"Received Play: %@", play);
+    }];
 }
 
 - (void)openStreamingConnection
@@ -98,7 +101,7 @@
         NSDictionary *startCommand = @{
                                        @"command": @"start",
                                        @"game_id": gameId,
-                                       @"speed": @0
+                                       @"speed": @2
                                        
                                        };
         NSError *error;
