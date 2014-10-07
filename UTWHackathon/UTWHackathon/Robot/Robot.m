@@ -55,4 +55,20 @@
     NSLog(@"New center set.");
 }
 
+- (NSString *)stateAsString
+{
+	NSString* string;
+	switch (self.state) {
+		case Stop:
+			string = @"Stop";
+			break;
+		case Forward:
+			string = @"Forward";
+			break;
+		case Backward:
+			string = @"Backward";
+			break;
+  
+	}
+}
 @end
