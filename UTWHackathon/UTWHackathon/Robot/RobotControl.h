@@ -9,7 +9,7 @@
 @protocol RobotControl <NSObject>
 
 - (void) stop;
-- (CGPoint) getLocation;
 - (void) moveForward;
+- (void) moveBackward;
 
 @end
