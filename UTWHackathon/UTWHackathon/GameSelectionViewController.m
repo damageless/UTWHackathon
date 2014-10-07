@@ -10,12 +10,12 @@
 #import <RobotKit/RobotKit.h>
 #import "AFNetworking.h"
 #import "GamePreviewData.h"
-#import "GameData.h"
 
 @interface GameSelectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *gamePreviewList;
 @property (strong, nonatomic) GameData *gameData;
+@property (copy, nonatomic) NSString *currentGameName;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -30,6 +30,11 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.gamePreviewList = [NSMutableArray array];
+    
+    if ([self.delegate currentGameName]) {
+        self.currentGameName = [self.delegate currentGameName];
+    }
+    
     [self getGameList];
 }
 
@@ -55,13 +60,16 @@
     }];
 }
 
-- (void)getGameInfo:(NSString *)gameId
+- (void)getGameInfo:(NSString *)gameId withGameName:(NSString *)gameName
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [NSString stringWithFormat:@"http://spherosport.herokuapp.com/game/%@", gameId];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.gameData = [[GameData alloc] initWithDictionary:responseObject];
+        self.gameData.gameName = gameName;
+        
+        [self.delegate selectedGameData:self.gameData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -78,18 +86,30 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellReuseIdentifier = @"gameCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
-    }
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
     GamePreviewData *gamePreview = [self.gamePreviewList objectAtIndex:indexPath.row];
     
     cell.textLabel.text = gamePreview.gameName;
     
+    if ([gamePreview.gameName isEqualToString:self.currentGameName]) {
+        cell.selected = YES;
+    }
+    else {
+        cell.selected = NO;
+    }
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GamePreviewData *previewData = [self.gamePreviewList objectAtIndex:indexPath.row];
+    
+    self.currentGameName = previewData.gameName;
+    [self.tableView reloadData];
+    [self getGameInfo:previewData.gameId withGameName:previewData.gameName];
 }
 
 @end

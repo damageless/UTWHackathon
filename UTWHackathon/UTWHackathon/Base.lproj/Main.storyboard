@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6CC-Ht-Vb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6CC-Ht-Vb5">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -198,23 +198,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robot is not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-nA-vOV">
-                                <rect key="frame" x="210" y="174" width="180" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphero is not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-nA-vOV">
+                                <rect key="frame" x="206" y="571" width="188" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-7w-S87">
-                                <rect key="frame" x="246" y="462" width="109" height="30"/>
-                                <state key="normal" title="Game Selection">
+                                <rect key="frame" x="256" y="119" width="89" height="30"/>
+                                <state key="normal" title="Select Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="gameSelectionButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bWj-BG-tJ9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Game Selected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSN-oo-Jii">
+                                <rect key="frame" x="228" y="72" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah4-uN-GlE">
-                                <rect key="frame" x="253" y="512" width="95" height="30"/>
+                                <rect key="frame" x="253" y="533" width="95" height="30"/>
                                 <state key="normal" title="Calibrate/Test">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -226,21 +232,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Ah4-uN-GlE" secondAttribute="centerX" id="2JF-d4-HhE"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ah4-uN-GlE" secondAttribute="bottom" constant="58" id="3qe-O4-Mmd"/>
-                            <constraint firstItem="Ah4-uN-GlE" firstAttribute="top" secondItem="84q-7w-S87" secondAttribute="bottom" constant="20" id="9hO-jw-U1h"/>
-                            <constraint firstItem="L43-nA-vOV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="110" id="DWC-Ur-L8f"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ah4-uN-GlE" secondAttribute="bottom" constant="37" id="3qe-O4-Mmd"/>
+                            <constraint firstItem="Ah4-uN-GlE" firstAttribute="top" secondItem="84q-7w-S87" secondAttribute="bottom" constant="384" id="9hO-jw-U1h"/>
+                            <constraint firstAttribute="centerX" secondItem="XSN-oo-Jii" secondAttribute="centerX" constant="-0.5" id="ADP-dE-C0x"/>
+                            <constraint firstItem="L43-nA-vOV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="507" id="DWC-Ur-L8f"/>
                             <constraint firstAttribute="centerX" secondItem="L43-nA-vOV" secondAttribute="centerX" id="JMn-KE-P6e"/>
                             <constraint firstAttribute="centerX" secondItem="84q-7w-S87" secondAttribute="centerX" constant="-0.5" id="szB-VZ-YuG"/>
+                            <constraint firstItem="XSN-oo-Jii" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="uVa-hG-x2u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rB2-at-Aa7"/>
                     <connections>
+                        <outlet property="currentGameLabel" destination="XSN-oo-Jii" id="kOd-CK-jlq"/>
                         <outlet property="robotConnectedLabel" destination="L43-nA-vOV" id="B1a-f9-iqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="356"/>
+            <point key="canvasLocation" x="116" y="433"/>
         </scene>
         <!--Field Calibration-->
         <scene sceneID="Ics-AE-ycF">

@@ -23,7 +23,7 @@
     self.team1Name = [awayTeam objectForKey:@"name"];
     color = [awayTeam objectForKey:@"color"];
     self.team1Color = [self colorFromHexString:color];
-
+    
     return self;
 }
 
