@@ -59,9 +59,9 @@
 
 - (IBAction)gameSelectionButtonTapped:(id)sender
 {
-    RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    GameSelectionViewController *controller = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
     
-    [self.navigationController pushViewController:roboTestVC animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)openStreamingConnection
