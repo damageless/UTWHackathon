@@ -10,7 +10,7 @@
 @interface Robot : NSObject {
 }
 
-@property (assign, nonatomic) CGPoint location;
+@property (assign, nonatomic) RKQuaternionData* location;
 @property (assign, nonatomic) BOOL isOnline;
 
 @end

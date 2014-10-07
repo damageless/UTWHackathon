@@ -12,6 +12,7 @@
 #import <RobotKit/RobotKit.h>
 #import "Robot/Robot.h"
 #import "AFNetworking.h"
+#import "RoboTestViewController.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
@@ -72,6 +73,13 @@
     gameSelectionVC.delegate = self;
     
     [self.navigationController pushViewController:gameSelectionVC animated:YES];
+}
+
+- (IBAction)testSpheroButtonTapped:(id)sender
+{
+    RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RoboTest"];
+    
+    [self.navigationController pushViewController:roboTestVC animated:YES];
 }
 
 - (IBAction)calibrateFieldButtonTapped:(id)sender

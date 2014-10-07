@@ -7,6 +7,7 @@
 //
 
 #import "RoboTestViewController.h"
+#import <RobotKit/RobotKit.h>
 
 @interface RoboTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
@@ -33,19 +34,26 @@
 
 
 - (IBAction)forwardButtonPressed:(id)sender {
-	
+    [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
 }
 - (IBAction)stopButtonPressed:(id)sender {
-	
+    [self stop];
 }
+
+- (void)stop {
+    [RKRollCommand sendStop];
+}
+
 - (IBAction)backwardButtonPressed:(id)sender {
-	
+    [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
 }
 - (IBAction)redColorButtonPressed:(id)sender {
-	
+	[RKRGBLEDOutputCommand sendCommandWithRed:1.0 green :0.0 blue :0.0];
 }
 - (IBAction)blueColorButtonPressed:(id)sender {
-	
+	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
 }
 
 @end

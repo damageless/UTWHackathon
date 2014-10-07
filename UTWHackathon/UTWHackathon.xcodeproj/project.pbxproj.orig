@@ -14,21 +14,30 @@
 		3229DBBF19E45632002624EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBBE19E45632002624EA /* Images.xcassets */; };
 		3229DBC219E45632002624EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBC019E45632002624EA /* LaunchScreen.xib */; };
 		3229DBCE19E45632002624EA /* UTWHackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3229DBCD19E45632002624EA /* UTWHackathonTests.m */; };
+		32AC961319E47B9F008BC9BC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */; };
+		32AC961419E47BAB008BC9BC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */; };
 		45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F72ADF19E4750200106A61 /* RoboTestViewController.m */; };
+		D213BD4019E4808F00732F7E /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = D213BD3F19E4808F00732F7E /* GameData.m */; };
 		D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
 		D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */; };
-<<<<<<< HEAD
-		D86EA3BC19E47550006DD644 /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = D86EA3BB19E47550006DD644 /* SocketRocket */; };
+		D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */; };
 		D86EA3BE19E475F8006DD644 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3BD19E475F8006DD644 /* libicucore.dylib */; };
 		D86EA3C019E47604006DD644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3BF19E47604006DD644 /* CFNetwork.framework */; };
 		D86EA3C219E4760D006DD644 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3C119E4760D006DD644 /* Security.framework */; };
 		D86EA3C419E47616006DD644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3C319E47616006DD644 /* Foundation.framework */; };
-=======
-		D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */; };
->>>>>>> b983f996d319c476383b012db440808aba399588
+		D86EA3CD19E48080006DD644 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3CC19E48080006DD644 /* SRWebSocket.m */; };
+		D86EA3E219E48369006DD644 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3D019E48369006DD644 /* AFHTTPRequestOperation.m */; };
+		D86EA3E319E48369006DD644 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3D219E48369006DD644 /* AFHTTPRequestOperationManager.m */; };
+		D86EA3E419E48369006DD644 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3D419E48369006DD644 /* AFHTTPSessionManager.m */; };
+		D86EA3E519E48369006DD644 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3D719E48369006DD644 /* AFNetworkReachabilityManager.m */; };
+		D86EA3E619E48369006DD644 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3D919E48369006DD644 /* AFSecurityPolicy.m */; };
+		D86EA3E719E48369006DD644 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DB19E48369006DD644 /* AFURLConnectionOperation.m */; };
+		D86EA3E819E48369006DD644 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DD19E48369006DD644 /* AFURLRequestSerialization.m */; };
+		D86EA3E919E48369006DD644 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */; };
+		D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3E119E48369006DD644 /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +68,8 @@
 		32AC960E19E471D1008BC9BC /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
 		45F72ADE19E4750200106A61 /* RoboTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoboTestViewController.h; sourceTree = "<group>"; };
 		45F72ADF19E4750200106A61 /* RoboTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoboTestViewController.m; sourceTree = "<group>"; };
+		D213BD3E19E4808F00732F7E /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		D213BD3F19E4808F00732F7E /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
 		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -66,16 +77,34 @@
 		D2DBC98119E46CDB00B5E398 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RobotUIKit.bundle; sourceTree = "<group>"; };
 		D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		D86EA3BB19E47550006DD644 /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SocketRocket; sourceTree = "<group>"; };
+		D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
+		D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSelectionViewController.m; sourceTree = "<group>"; };
 		D86EA3BD19E475F8006DD644 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D86EA3BF19E47604006DD644 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D86EA3C119E4760D006DD644 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D86EA3C319E47616006DD644 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-=======
-		D2DBC99319E475EC00B5E398 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
-		D2DBC99419E475EC00B5E398 /* GameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSelectionViewController.m; sourceTree = "<group>"; };
->>>>>>> b983f996d319c476383b012db440808aba399588
+		D86EA3CA19E48080006DD644 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		D86EA3CB19E48080006DD644 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		D86EA3CC19E48080006DD644 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		D86EA3CF19E48369006DD644 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		D86EA3D019E48369006DD644 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		D86EA3D119E48369006DD644 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		D86EA3D219E48369006DD644 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		D86EA3D319E48369006DD644 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		D86EA3D419E48369006DD644 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		D86EA3D519E48369006DD644 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		D86EA3D619E48369006DD644 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		D86EA3D719E48369006DD644 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D86EA3D819E48369006DD644 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		D86EA3D919E48369006DD644 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		D86EA3DA19E48369006DD644 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		D86EA3DB19E48369006DD644 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		D86EA3DC19E48369006DD644 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		D86EA3DD19E48369006DD644 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		D86EA3DE19E48369006DD644 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		D86EA3E019E48369006DD644 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		D86EA3E119E48369006DD644 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AC961419E47BAB008BC9BC /* CoreMotion.framework in Frameworks */,
+				32AC961319E47B9F008BC9BC /* ExternalAccessory.framework in Frameworks */,
 				D86EA3C419E47616006DD644 /* Foundation.framework in Frameworks */,
 				D86EA3C219E4760D006DD644 /* Security.framework in Frameworks */,
 				D86EA3C019E47604006DD644 /* CFNetwork.framework in Frameworks */,
@@ -110,7 +141,8 @@
 				D86EA3C119E4760D006DD644 /* Security.framework */,
 				D86EA3BF19E47604006DD644 /* CFNetwork.framework */,
 				D86EA3BD19E475F8006DD644 /* libicucore.dylib */,
-				D86EA3BB19E47550006DD644 /* SocketRocket */,
+				D86EA3C919E48080006DD644 /* SocketRocket */,
+				D86EA3CE19E48369006DD644 /* AFNetworking */,
 				3229DBB019E45632002624EA /* UTWHackathon */,
 				3229DBCA19E45632002624EA /* UTWHackathonTests */,
 				3229DBAF19E45632002624EA /* Products */,
@@ -132,6 +164,8 @@
 				32AC960C19E471BA008BC9BC /* Robot */,
 				3229DBB519E45632002624EA /* AppDelegate.h */,
 				3229DBB619E45632002624EA /* AppDelegate.m */,
+				D213BD3E19E4808F00732F7E /* GameData.h */,
+				D213BD3F19E4808F00732F7E /* GameData.m */,
 				3229DBB819E45632002624EA /* ViewController.h */,
 				3229DBB919E45632002624EA /* ViewController.m */,
 				45F72ADE19E4750200106A61 /* RoboTestViewController.h */,
@@ -186,6 +220,42 @@
 				32AC960E19E471D1008BC9BC /* Robot.h */,
 			);
 			name = Robot;
+			sourceTree = "<group>";
+		};
+		D86EA3C919E48080006DD644 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				D86EA3CA19E48080006DD644 /* SocketRocket-Prefix.pch */,
+				D86EA3CB19E48080006DD644 /* SRWebSocket.h */,
+				D86EA3CC19E48080006DD644 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		D86EA3CE19E48369006DD644 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D86EA3CF19E48369006DD644 /* AFHTTPRequestOperation.h */,
+				D86EA3D019E48369006DD644 /* AFHTTPRequestOperation.m */,
+				D86EA3D119E48369006DD644 /* AFHTTPRequestOperationManager.h */,
+				D86EA3D219E48369006DD644 /* AFHTTPRequestOperationManager.m */,
+				D86EA3D319E48369006DD644 /* AFHTTPSessionManager.h */,
+				D86EA3D419E48369006DD644 /* AFHTTPSessionManager.m */,
+				D86EA3D519E48369006DD644 /* AFNetworking.h */,
+				D86EA3D619E48369006DD644 /* AFNetworkReachabilityManager.h */,
+				D86EA3D719E48369006DD644 /* AFNetworkReachabilityManager.m */,
+				D86EA3D819E48369006DD644 /* AFSecurityPolicy.h */,
+				D86EA3D919E48369006DD644 /* AFSecurityPolicy.m */,
+				D86EA3DA19E48369006DD644 /* AFURLConnectionOperation.h */,
+				D86EA3DB19E48369006DD644 /* AFURLConnectionOperation.m */,
+				D86EA3DC19E48369006DD644 /* AFURLRequestSerialization.h */,
+				D86EA3DD19E48369006DD644 /* AFURLRequestSerialization.m */,
+				D86EA3DE19E48369006DD644 /* AFURLResponseSerialization.h */,
+				D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */,
+				D86EA3E019E48369006DD644 /* AFURLSessionManager.h */,
+				D86EA3E119E48369006DD644 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +342,6 @@
 				D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */,
 				3229DBC219E45632002624EA /* LaunchScreen.xib in Resources */,
 				3229DBBF19E45632002624EA /* Images.xcassets in Resources */,
-				D86EA3BC19E47550006DD644 /* SocketRocket in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +359,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86EA3E719E48369006DD644 /* AFURLConnectionOperation.m in Sources */,
 				3229DBBA19E45632002624EA /* ViewController.m in Sources */,
 				D2DBC99519E475EC00B5E398 /* GameSelectionViewController.m in Sources */,
 				3229DBB719E45632002624EA /* AppDelegate.m in Sources */,
+				D86EA3E919E48369006DD644 /* AFURLResponseSerialization.m in Sources */,
 				3229DBB419E45632002624EA /* main.m in Sources */,
+				D86EA3E819E48369006DD644 /* AFURLRequestSerialization.m in Sources */,
+				D86EA3E619E48369006DD644 /* AFSecurityPolicy.m in Sources */,
+				D86EA3E219E48369006DD644 /* AFHTTPRequestOperation.m in Sources */,
+				D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */,
+				D86EA3CD19E48080006DD644 /* SRWebSocket.m in Sources */,
 				D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */,
+<<<<<<< HEAD
+				D86EA3E419E48369006DD644 /* AFHTTPSessionManager.m in Sources */,
+=======
+				D213BD4019E4808F00732F7E /* GameData.m in Sources */,
+>>>>>>> 6f10b961b5aee7cf645b3e4463cfadebfa2b44db
 				45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */,
+				D86EA3E519E48369006DD644 /* AFNetworkReachabilityManager.m in Sources */,
+				D86EA3E319E48369006DD644 /* AFHTTPRequestOperationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +507,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UTWHackathon",
-					"$(PROJECT_DIR)/frameworks",
 				);
 				INFOPLIST_FILE = UTWHackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,7 +527,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UTWHackathon",
-					"$(PROJECT_DIR)/frameworks",
 				);
 				INFOPLIST_FILE = UTWHackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

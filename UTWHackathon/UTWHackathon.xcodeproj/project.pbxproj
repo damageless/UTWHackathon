@@ -17,6 +17,7 @@
 		32AC961319E47B9F008BC9BC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */; };
 		32AC961419E47BAB008BC9BC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */; };
 		45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F72ADF19E4750200106A61 /* RoboTestViewController.m */; };
+		D213BD4019E4808F00732F7E /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = D213BD3F19E4808F00732F7E /* GameData.m */; };
 		D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98119E46CDB00B5E398 /* RobotKit.framework */; };
@@ -67,6 +68,8 @@
 		32AC960E19E471D1008BC9BC /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
 		45F72ADE19E4750200106A61 /* RoboTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoboTestViewController.h; sourceTree = "<group>"; };
 		45F72ADF19E4750200106A61 /* RoboTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoboTestViewController.m; sourceTree = "<group>"; };
+		D213BD3E19E4808F00732F7E /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		D213BD3F19E4808F00732F7E /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
 		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
 		D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 				32AC960C19E471BA008BC9BC /* Robot */,
 				3229DBB519E45632002624EA /* AppDelegate.h */,
 				3229DBB619E45632002624EA /* AppDelegate.m */,
+				D213BD3E19E4808F00732F7E /* GameData.h */,
+				D213BD3F19E4808F00732F7E /* GameData.m */,
 				3229DBB819E45632002624EA /* ViewController.h */,
 				3229DBB919E45632002624EA /* ViewController.m */,
 				45F72ADE19E4750200106A61 /* RoboTestViewController.h */,
@@ -367,6 +372,7 @@
 				D86EA3CD19E48080006DD644 /* SRWebSocket.m in Sources */,
 				D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */,
 				D86EA3E419E48369006DD644 /* AFHTTPSessionManager.m in Sources */,
+				D213BD4019E4808F00732F7E /* GameData.m in Sources */,
 				45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */,
 				D86EA3E519E48369006DD644 /* AFNetworkReachabilityManager.m in Sources */,
 				D86EA3E319E48369006DD644 /* AFHTTPRequestOperationManager.m in Sources */,
