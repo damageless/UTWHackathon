@@ -14,11 +14,7 @@
 #import "RoboTestViewController.h"
 #import "GameData.h"
 
-@interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
-
-@property (weak, nonatomic) IBOutlet UIButton *calibrateFieldButton;
-
-- (IBAction)calibrateFieldButtonTapped:(id)sender;
+@interface ViewController () <GameSelectionDelegate>
 
 @end
 
@@ -57,21 +53,9 @@
 - (IBAction)testSpheroButtonTapped:(id)sender
 {
     RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RoboTest"];
-    roboTestVC.delegate = self;
 
     [self.navigationController pushViewController:roboTestVC animated:YES];
 }
-
-- (void)setSide0:(RKQuaternionData *)side0Location
-{
-    
-}
-
-- (void)setSide1:(RKQuaternionData *)side1Location
-{
-    
-}
-
 
 - (void)openStreamingConnection
 {
