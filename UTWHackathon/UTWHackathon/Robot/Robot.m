@@ -10,7 +10,7 @@
 
 @implementation Robot
 
-#define VELOCITY 0.4
+#define VELOCITY 0.1
 
 -(RKLocatorPosition) getLocation
 {

@@ -35,6 +35,10 @@
 	[self.blueColorButton addTarget:self action:@selector(blueColorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[self.goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
+    
+    [robo setCenter];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,7 +81,6 @@
 {
 	NSInteger dest = [self.destinationField.text integerValue];
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
-    [robo setCenter];
 	[robo move:dest];
 }
 @end
