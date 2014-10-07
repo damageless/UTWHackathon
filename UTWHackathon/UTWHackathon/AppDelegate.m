@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
+    NSLog(@"Testing");
     return YES;
 }
 
@@ -43,7 +45,43 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+     
+-(void)handleRobotOnline {
+    NSLog(@"Robot is online.");
+    [self sendSetDataStreamingCommand];
+    [[RKDeviceMessenger sharedMessenger] addDataStreamingObserver:self selector:@selector(handleAsyncData:)];
+}
 
+-(void)sendSetDataStreamingCommand {
+    RKDataStreamingMask mask = RKDataStreamingMaskAccelerometerFilteredAll | RKDataStreamingMaskQuaternionAll | RKDataStreamingMaskLocatorAll;
+    
+    uint16_t divisor = 40;
+    uint16_t packetFrames = 1;
+    uint8_t count = 0;
+    
+    [RKSetDataStreamingCommand sendCommandWithSampleRateDivisor:divisor
+                                                   packetFrames:packetFrames
+                                                     sensorMask:mask
+                                                    packetCount:count];
+     NSLog(@"sendSetDatStreamingCommand");
+}
 
+- (void)handleAsyncData:(RKDeviceAsyncData *)asyncData
+{
+    NSLog(@"Got async data.");
+    if ([asyncData isKindOfClass:[RKDeviceSensorsAsyncData class]]) {
+        
+        RKDeviceSensorsAsyncData *sensorsAsyncData = (RKDeviceSensorsAsyncData *)asyncData;
+        RKDeviceSensorsData *sensorsData = [sensorsAsyncData.dataFrames lastObject];
+        RKQuaternionData *quaternionData = sensorsData.quaternionData;
+        
+        self.robot.quaternion = quaternionData;
+        self.robot.accelerometerData = sensorsData.accelerometerData;
+        self.robot.locatorData = sensorsData.locatorData;
+
+//        NSLog(@"Quaternion data: %f, %f, %f, %f", quaternionData.quaternions.q0, quaternionData.quaternions.q1, quaternionData.quaternions.q2, quaternionData.quaternions.q3);
+        NSLog(@"Accelerometer data: %f, %f, %f", self.robot.accelerometerData.acceleration.x, self.robot.accelerometerData.acceleration.y, self.robot.accelerometerData.acceleration.z);
+    }
+}
 
 @end

@@ -15,5 +15,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) Robot *robot;
 
+-(void)handleAsyncData:(RKDeviceAsyncData *)asyncData;
+
 @end
 

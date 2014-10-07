@@ -11,8 +11,8 @@
 
 @protocol CalibrateFieldDelegate <NSObject>
 
-- (void)setSide0:(RKQuaternionData *)side0Location;
-- (void)setSide1:(RKQuaternionData *)side1Location;
+- (void)setSide0:(RKLocatorData *)side0Location;
+- (void)setSide1:(RKLocatorData *)side1Location;
 
 @end
 

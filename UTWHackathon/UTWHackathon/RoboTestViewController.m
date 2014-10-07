@@ -8,6 +8,7 @@
 
 #import "RoboTestViewController.h"
 #import <RobotKit/RobotKit.h>
+#import "AppDelegate.h"
 
 @interface RoboTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
@@ -35,7 +36,7 @@
 
 - (IBAction)forwardButtonPressed:(id)sender {
     [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
-    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:0.4];
 }
 - (IBAction)stopButtonPressed:(id)sender {
     [self stop];
@@ -46,8 +47,8 @@
 }
 
 - (IBAction)backwardButtonPressed:(id)sender {
-    [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
-    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
+    [RKRollCommand sendCommandWithHeading:180.0 velocity:0.5];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:0.4];
 }
 - (IBAction)redColorButtonPressed:(id)sender {
 	[RKRGBLEDOutputCommand sendCommandWithRed:1.0 green :0.0 blue :0.0];
@@ -59,14 +60,21 @@
 
 - (IBAction)setSide0ButtonTapped:(id)sender
 {
-    [self.delegate setSide0:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+//    if (appDelegate.robot.) {
+//        [self.delegate setSide0:appDelegate.robot.quaternion];
+//    }
     
 }
 
 - (IBAction)setSide1ButtonTapped:(id)sender
 {
-    [self.delegate setSide1:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+//    if (appDelegate.robot.quaternion) {
+//        [self.delegate setSide1:appDelegate.robot.quaternion];
+//    }
 }
 
 @end
