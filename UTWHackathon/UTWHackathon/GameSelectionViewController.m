@@ -103,7 +103,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GamePreviewData *previewData = [self.gamePreviewList objectAtIndex:indexPath.row];
     
