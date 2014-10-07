@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <RobotKit/RobotKit.h>
 
-BOOL robotOnline = NO;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

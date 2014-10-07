@@ -58,12 +58,6 @@
 
 - (void)handleRobotOnline
 {
-    /*The robot is now online, we can begin sending commands*/
-    if(!robotOnline) {
-        /* Send commands to Sphero Here: */
-        
-    }
-    robotOnline = YES;
 }
 
 
