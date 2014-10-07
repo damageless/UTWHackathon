@@ -21,6 +21,10 @@
 		D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
 		D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */; };
 		D86EA3BC19E47550006DD644 /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = D86EA3BB19E47550006DD644 /* SocketRocket */; };
+		D86EA3BE19E475F8006DD644 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3BD19E475F8006DD644 /* libicucore.dylib */; };
+		D86EA3C019E47604006DD644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3BF19E47604006DD644 /* CFNetwork.framework */; };
+		D86EA3C219E4760D006DD644 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3C119E4760D006DD644 /* Security.framework */; };
+		D86EA3C419E47616006DD644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86EA3C319E47616006DD644 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RobotUIKit.bundle; sourceTree = "<group>"; };
 		D2DBC98319E46CDB00B5E398 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
 		D86EA3BB19E47550006DD644 /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SocketRocket; sourceTree = "<group>"; };
+		D86EA3BD19E475F8006DD644 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D86EA3BF19E47604006DD644 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D86EA3C119E4760D006DD644 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D86EA3C319E47616006DD644 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86EA3C419E47616006DD644 /* Foundation.framework in Frameworks */,
+				D86EA3C219E4760D006DD644 /* Security.framework in Frameworks */,
+				D86EA3C019E47604006DD644 /* CFNetwork.framework in Frameworks */,
+				D86EA3BE19E475F8006DD644 /* libicucore.dylib in Frameworks */,
 				D2DBC98D19E46DD800B5E398 /* RobotKit.framework in Frameworks */,
 				D2DBC98E19E46DD800B5E398 /* RobotUIKit.bundle in Frameworks */,
 				D2DBC98F19E46DD800B5E398 /* RobotUIKit.framework in Frameworks */,
@@ -85,6 +97,10 @@
 		3229DBA519E45632002624EA = {
 			isa = PBXGroup;
 			children = (
+				D86EA3C319E47616006DD644 /* Foundation.framework */,
+				D86EA3C119E4760D006DD644 /* Security.framework */,
+				D86EA3BF19E47604006DD644 /* CFNetwork.framework */,
+				D86EA3BD19E475F8006DD644 /* libicucore.dylib */,
 				D86EA3BB19E47550006DD644 /* SocketRocket */,
 				3229DBB019E45632002624EA /* UTWHackathon */,
 				3229DBCA19E45632002624EA /* UTWHackathonTests */,
