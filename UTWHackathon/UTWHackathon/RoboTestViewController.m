@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *redColorButton;
 @property (weak, nonatomic) IBOutlet UIButton *blueColorButton;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
+@property (weak, nonatomic) IBOutlet UITextField *destinationField;
 
 @end
 
@@ -31,6 +33,7 @@
 	[self.redColorButton addTarget:self action:@selector(redColorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.blueColorButton addTarget:self action:@selector(blueColorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	
+	[self.goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -57,4 +60,9 @@
 	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
 }
 
+
+- (void)goButtonPressed
+{
+	
+}
 @end

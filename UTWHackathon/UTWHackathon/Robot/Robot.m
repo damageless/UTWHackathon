@@ -12,6 +12,11 @@
 
 #define VELOCITY 0.4
 
+-(RKLocatorPosition) getLocation
+{
+    return _locatorData.position;
+}
+
 -(void)setLocatorData:(RKLocatorData *)locatorData
 {
     _locatorData = locatorData;

@@ -66,7 +66,7 @@
 
 - (void)openStreamingConnection
 {
-    NSString *url = @"http://spherosport.herokuapp.com/games";
+    NSString *url = @"http://spherosport.herokuapp.com";
     NSLog(@"Opening streaming connection...");
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:request];

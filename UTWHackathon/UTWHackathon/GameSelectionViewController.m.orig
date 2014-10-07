@@ -25,14 +25,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
+=======
     // Do any additional setup after loading the view.
     [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.gamePreviewList = [NSMutableArray array];
     [self getGameList];
+>>>>>>> 11115a2863bca872e690541c8c873d6c6182804d
     
+    [self getGameList];
     [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
+
+    // Do any additional setup after loading the view.
+    [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
 }
 
 - (void)didReceiveMemoryWarning {
