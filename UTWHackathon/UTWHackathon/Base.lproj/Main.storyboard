@@ -74,23 +74,26 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGS-mv-s7V">
-                                <rect key="frame" x="287" y="464" width="26" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-g2-cU8">
-                                <rect key="frame" x="285" y="518" width="30" height="30"/>
-                                <state key="normal" title="Go">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-m0-tbP">
                                 <rect key="frame" x="284" y="408" width="31" height="30"/>
                                 <state key="normal" title="Blue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-g2-cU8">
+                                <rect key="frame" x="285" y="518" width="30" height="30"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGS-mv-s7V">
+                                <rect key="frame" x="199" y="49" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gOS-Ul-wFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,12 +106,12 @@
                             <constraint firstAttribute="centerX" secondItem="eLf-5M-jlH" secondAttribute="centerX" id="YEF-9R-wZm"/>
                             <constraint firstItem="oik-Bz-KDW" firstAttribute="centerX" secondItem="eLf-5M-jlH" secondAttribute="centerX" id="bo8-vU-6C2"/>
                             <constraint firstAttribute="centerX" secondItem="jGR-7k-qwd" secondAttribute="centerX" id="c37-2k-218"/>
-                            <constraint firstItem="UGS-mv-s7V" firstAttribute="top" secondItem="aaq-m0-tbP" secondAttribute="bottom" constant="26" id="dAZ-8X-2Zi"/>
+                            <constraint firstItem="UGS-mv-s7V" firstAttribute="top" secondItem="aaq-m0-tbP" secondAttribute="bottom" constant="-389" id="dAZ-8X-2Zi"/>
                             <constraint firstItem="reD-xZ-Lk8" firstAttribute="top" secondItem="eLf-5M-jlH" secondAttribute="bottom" constant="33" id="fMb-w6-1in"/>
                             <constraint firstItem="oik-Bz-KDW" firstAttribute="centerX" secondItem="jGR-7k-qwd" secondAttribute="centerX" id="flc-eS-fo5"/>
                             <constraint firstItem="aaq-m0-tbP" firstAttribute="top" secondItem="OoY-Vx-Bm3" secondAttribute="bottom" constant="24" id="ggH-z9-EyY"/>
-                            <constraint firstAttribute="centerX" secondItem="UGS-mv-s7V" secondAttribute="centerX" id="igm-bR-Obd"/>
-                            <constraint firstItem="kv1-g2-cU8" firstAttribute="top" secondItem="UGS-mv-s7V" secondAttribute="bottom" constant="24" id="kTh-t2-Vza"/>
+                            <constraint firstAttribute="centerX" secondItem="UGS-mv-s7V" secondAttribute="centerX" constant="1" id="igm-bR-Obd"/>
+                            <constraint firstItem="kv1-g2-cU8" firstAttribute="top" secondItem="UGS-mv-s7V" secondAttribute="bottom" constant="439" id="kTh-t2-Vza"/>
                             <constraint firstAttribute="centerX" secondItem="oik-Bz-KDW" secondAttribute="centerX" id="mGk-XA-OXD"/>
                             <constraint firstItem="jGR-7k-qwd" firstAttribute="top" secondItem="MUt-6L-Cnd" secondAttribute="bottom" constant="79" id="ne5-xP-HWz"/>
                             <constraint firstItem="OoY-Vx-Bm3" firstAttribute="trailing" secondItem="reD-xZ-Lk8" secondAttribute="trailing" id="oc3-9R-O6o"/>
