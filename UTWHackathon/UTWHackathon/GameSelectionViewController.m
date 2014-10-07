@@ -10,10 +10,12 @@
 #import <RobotKit/RobotKit.h>
 #import "AFNetworking.h"
 #import "GamePreviewData.h"
+#import "GameData.h"
 
 @interface GameSelectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *gamePreviewList;
+@property (strong, nonatomic) GameData *gameData;
 
 @end
 
@@ -24,6 +26,8 @@
     // Do any additional setup after loading the view.
     [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
     [self getGameList];
+    
+    [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,16 +49,16 @@
     }];
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)getGameInfo:(NSString *)gameId
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = [NSString stringWithFormat:@"http://spherosport.herokuapp.com/game/%@", gameId];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.gameData = [[GameData alloc] initWithDictionary:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
-*/
 
 @end
