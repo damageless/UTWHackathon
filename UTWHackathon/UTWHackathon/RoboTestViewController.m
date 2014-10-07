@@ -56,4 +56,17 @@
 	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
 }
 
+
+- (IBAction)setSide0ButtonTapped:(id)sender
+{
+    [self.delegate setSide0:nil];
+    
+}
+
+- (IBAction)setSide1ButtonTapped:(id)sender
+{
+    [self.delegate setSide1:nil];
+    
+}
+
 @end

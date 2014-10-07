@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
 #import <RobotKit/RobotKit.h>
 #import "Robot/Robot.h"
@@ -66,31 +65,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)gameSelectionButtonButtonTapped:(id)sender
-{
-    GameSelectionViewController *gameSelectionVC = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
-    gameSelectionVC.delegate = self;
-    
-    [self.navigationController pushViewController:gameSelectionVC animated:YES];
-}
-
 - (IBAction)testSpheroButtonTapped:(id)sender
 {
     RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RoboTest"];
+    roboTestVC.delegate = self;
     
     [self.navigationController pushViewController:roboTestVC animated:YES];
 }
 
-- (IBAction)calibrateFieldButtonTapped:(id)sender
+- (void)setSide0:(RKQuaternionData *)side0Location
 {
-    CalibrateFieldViewController *calibrateFieldVC = (CalibrateFieldViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalibrateField"];
-    calibrateFieldVC.delegate = self;
     
-    
-    
-    [self.navigationController pushViewController:calibrateFieldVC animated:YES];
 }
+
+- (void)setSide1:(RKQuaternionData *)side1Location
+{
+    
+}
+
 
 - (void)openStreamingConnection
 {
@@ -118,6 +110,5 @@
 //- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 //- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 //- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
-
 
 @end

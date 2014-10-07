@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RobotKit/RobotKit.h>
+
+@protocol CalibrateFieldDelegate <NSObject>
+
+- (void)setSide0:(RKQuaternionData *)side0Location;
+- (void)setSide1:(RKQuaternionData *)side1Location;
+
+@end
 
 @interface RoboTestViewController : UIViewController
+
+@property (weak, nonatomic) id<CalibrateFieldDelegate> delegate;
 
 @end
