@@ -35,7 +35,7 @@
     }
 }
 
--(void)move: (int) x
+-(void)move: (NSInteger) x
 {
     _destination = x;
     if (x - self.locatorData.position.x > 0) {
