@@ -78,9 +78,10 @@
         self.robot.quaternion = quaternionData;
         self.robot.accelerometerData = sensorsData.accelerometerData;
         self.robot.locatorData = sensorsData.locatorData;
+        
 
 //        NSLog(@"Quaternion data: %f, %f, %f, %f", quaternionData.quaternions.q0, quaternionData.quaternions.q1, quaternionData.quaternions.q2, quaternionData.quaternions.q3);
-        NSLog(@"Accelerometer data: %f, %f, %f", self.robot.accelerometerData.acceleration.x, self.robot.accelerometerData.acceleration.y, self.robot.accelerometerData.acceleration.z);
+        NSLog(@"Locator data: %f, %f", sensorsData.locatorData.position.x, sensorsData.locatorData.position.y);
     }
 }
 

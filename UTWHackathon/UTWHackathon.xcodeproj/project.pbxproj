@@ -16,6 +16,7 @@
 		3229DBCE19E45632002624EA /* UTWHackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3229DBCD19E45632002624EA /* UTWHackathonTests.m */; };
 		32AC961319E47B9F008BC9BC /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97A19E46ABA00B5E398 /* ExternalAccessory.framework */; };
 		32AC961419E47BAB008BC9BC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DBC97C19E46AC300B5E398 /* CoreMotion.framework */; };
+		32AC961A19E491CC008BC9BC /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC961919E491CC008BC9BC /* Robot.m */; };
 		45F72AE019E4750200106A61 /* RoboTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F72ADF19E4750200106A61 /* RoboTestViewController.m */; };
 		D213BD4019E4808F00732F7E /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = D213BD3F19E4808F00732F7E /* GameData.m */; };
 		D2DBC98519E46CDB00B5E398 /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2DBC98219E46CDB00B5E398 /* RobotUIKit.bundle */; };
@@ -63,8 +64,8 @@
 		3229DBC719E45632002624EA /* UTWHackathonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTWHackathonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3229DBCC19E45632002624EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3229DBCD19E45632002624EA /* UTWHackathonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTWHackathonTests.m; sourceTree = "<group>"; };
-		32AC960D19E471C4008BC9BC /* RobotControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotControl.h; path = Robot/RobotControl.h; sourceTree = "<group>"; };
-		32AC960E19E471D1008BC9BC /* Robot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
+		32AC961819E491CC008BC9BC /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Robot.h; path = Robot/Robot.h; sourceTree = "<group>"; };
+		32AC961919E491CC008BC9BC /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Robot.m; path = Robot/Robot.m; sourceTree = "<group>"; };
 		45F72ADE19E4750200106A61 /* RoboTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoboTestViewController.h; sourceTree = "<group>"; };
 		45F72ADF19E4750200106A61 /* RoboTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoboTestViewController.m; sourceTree = "<group>"; };
 		D213BD3E19E4808F00732F7E /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
@@ -211,8 +212,8 @@
 		32AC960C19E471BA008BC9BC /* Robot */ = {
 			isa = PBXGroup;
 			children = (
-				32AC960D19E471C4008BC9BC /* RobotControl.h */,
-				32AC960E19E471D1008BC9BC /* Robot.h */,
+				32AC961819E491CC008BC9BC /* Robot.h */,
+				32AC961919E491CC008BC9BC /* Robot.m */,
 			);
 			name = Robot;
 			sourceTree = "<group>";
@@ -362,6 +363,7 @@
 				3229DBB419E45632002624EA /* main.m in Sources */,
 				D86EA3E819E48369006DD644 /* AFURLRequestSerialization.m in Sources */,
 				D86EA3E619E48369006DD644 /* AFSecurityPolicy.m in Sources */,
+				32AC961A19E491CC008BC9BC /* Robot.m in Sources */,
 				D86EA3E219E48369006DD644 /* AFHTTPRequestOperation.m in Sources */,
 				D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */,
 				D86EA3CD19E48080006DD644 /* SRWebSocket.m in Sources */,
