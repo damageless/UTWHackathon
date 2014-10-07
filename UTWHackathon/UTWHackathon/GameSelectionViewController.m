@@ -7,6 +7,7 @@
 //
 
 #import "GameSelectionViewController.h"
+#import <RobotKit/RobotKit.h>
 
 @interface GameSelectionViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
 }
 
 - (void)didReceiveMemoryWarning {
