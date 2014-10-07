@@ -14,7 +14,11 @@
 #import "RoboTestViewController.h"
 #import "GameData.h"
 
-@interface ViewController () <GameSelectionDelegate>
+@interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *calibrateFieldButton;
+
+- (IBAction)calibrateFieldButtonTapped:(id)sender;
 
 @end
 
@@ -27,6 +31,23 @@
     [self connectToRobot];
     
     [self openStreamingConnection];
+<<<<<<< HEAD
+=======
+    [self getGameList];
+}
+    
+- (void)getGameList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://spherosport.herokuapp.com/games" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        for (NSDictionary *dict in responseObject) {
+//            GameData *game = [GameData ]
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+>>>>>>> 41f443f04671d29958ddd27727624fb3d7f04e6b
 }
 
 -(void)connectToRobot
@@ -53,16 +74,21 @@
 - (IBAction)testSpheroButtonTapped:(id)sender
 {
     RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RoboTest"];
+    roboTestVC.delegate = self;
 
     [self.navigationController pushViewController:roboTestVC animated:YES];
 }
 
-- (IBAction)gameSelectionButtonTapped:(id)sender
+- (void)setSide0:(RKQuaternionData *)side0Location
 {
-    RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
     
-    [self.navigationController pushViewController:roboTestVC animated:YES];
 }
+
+- (void)setSide1:(RKQuaternionData *)side1Location
+{
+    
+}
+
 
 - (void)openStreamingConnection
 {

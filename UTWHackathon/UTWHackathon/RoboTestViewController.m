@@ -8,6 +8,7 @@
 
 #import "RoboTestViewController.h"
 #import <RobotKit/RobotKit.h>
+#import "AppDelegate.h"
 
 @interface RoboTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
@@ -54,19 +55,6 @@
 }
 - (IBAction)blueColorButtonPressed:(id)sender {
 	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
-}
-
-
-- (IBAction)setSide0ButtonTapped:(id)sender
-{
-    [self.delegate setSide0:nil];
-    
-}
-
-- (IBAction)setSide1ButtonTapped:(id)sender
-{
-    [self.delegate setSide1:nil];
-    
 }
 
 @end

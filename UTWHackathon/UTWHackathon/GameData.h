@@ -11,14 +11,17 @@
 #import <RobotKit/RobotKit.h>
 
 @interface GameData : NSObject
-           
-           
+
 @property (copy, nonatomic) NSString *team0Name;
+@property (copy, nonatomic) UIColor *team0Color;
+@property (strong, nonatomic) RKLocatorData *side0Location;
+
 @property (copy, nonatomic) NSString *team1Name;
+@property (copy, nonatomic) UIColor *team1Color;
+@property (strong, nonatomic) RKLocatorData *side1Location;
 
-@property (strong, nonatomic) RKQuaternionData *side0Location;
-@property (strong, nonatomic) RKQuaternionData *side1Location;
-@property (strong, nonatomic) RKQuaternionData *fieldCenterLocation;
+@property (readonly, nonatomic) RKLocatorPosition *fieldCenterPosition;
 
+- (GameData *)initWithDictionary:(NSDictionary *)dict;
 
 @end

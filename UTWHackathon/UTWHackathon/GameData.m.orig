@@ -1,0 +1,28 @@
+//
+//  GameData.m
+//  UTWHackathon
+//
+//  Created by Scott Larson on 10/7/14.
+//  Copyright (c) 2014 TradeStation. All rights reserved.
+//
+
+#import "GameData.h"
+
+@implementation GameData
+
+<<<<<<< HEAD
+=======
+
+- (RKLocatorPosition *)fieldCenterLocation
+{
+    if (self.side0Location && self.side0Location) {
+        
+        
+    }
+    
+    return nil;
+}
+
+
+>>>>>>> 41f443f04671d29958ddd27727624fb3d7f04e6b
+@end
