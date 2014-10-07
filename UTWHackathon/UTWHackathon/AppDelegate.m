@@ -58,6 +58,7 @@
 
 - (void)handleRobotOnline
 {
+    [self robot].isOnline = true;
 }
 
 
