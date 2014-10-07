@@ -15,8 +15,5 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) Robot *robot;
 
--(void)setupRobotConnection;
--(void)handleRobotOnline;
-
 @end
 

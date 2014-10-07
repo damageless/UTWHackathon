@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
+#import <RobotKit/RobotKit.h>
+#import "Robot/Robot.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
@@ -23,6 +25,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
+    [self connectToRobot];
+}
+
+-(void)connectToRobot
+{
+    [self.robotConnectedLabel setText:@"Connecting to Robot..."];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
+    if ([[RKRobotProvider sharedRobotProvider] isRobotUnderControl])
+    {
+        [[RKRobotProvider sharedRobotProvider] openRobotConnection];
+    }else
+    {
+        [[RKRobotProvider sharedRobotProvider] controlConnectedRobot];
+    }
+}
+
+- (void) handleRobotOnline {
+    [self.robotConnectedLabel setText:@"Robot is connected"];
 }
 
 - (void)didReceiveMemoryWarning {

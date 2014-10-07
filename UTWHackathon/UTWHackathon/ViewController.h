@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *robotConnectedLabel;
-
+- (void)handleRobotOnline;
 
 @end
 

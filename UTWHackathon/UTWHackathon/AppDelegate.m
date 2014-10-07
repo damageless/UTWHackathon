@@ -44,22 +44,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)connectToRobot
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
-    if ([[RKRobotProvider sharedRobotProvider] isRobotUnderControl])
-    {
-        [[RKRobotProvider sharedRobotProvider] openRobotConnection];
-    }else
-    {
-        [[RKRobotProvider sharedRobotProvider] controlConnectedRobot];
-    }
-}
-
-- (void)handleRobotOnline
-{
-    [self robot].isOnline = true;
-}
 
 
 @end
