@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <RobotKit/RobotKit.h>
+#import "Robot/Robot.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Robot *robot;
 
 -(void)setupRobotConnection;
 -(void)handleRobotOnline;
