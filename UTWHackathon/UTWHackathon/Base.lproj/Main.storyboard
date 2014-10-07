@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6CC-Ht-Vb5">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -198,13 +199,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphero is not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-nA-vOV">
-                                <rect key="frame" x="206" y="571" width="188" height="20.5"/>
+                                <rect key="frame" x="206" y="559" width="188" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-7w-S87">
-                                <rect key="frame" x="220.5" y="119" width="160" height="30"/>
+                                <rect key="frame" x="220" y="122" width="160" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="4hN-i3-czg"/>
                                     <constraint firstAttribute="height" constant="30" id="msJ-LA-7NF"/>
@@ -218,18 +219,40 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Game Selected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSN-oo-Jii">
-                                <rect key="frame" x="228" y="72" width="145" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="210" y="84" width="180" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="0hO-53-0MK"/>
+                                    <constraint firstAttribute="width" constant="180" id="WMj-3l-hYo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah4-uN-GlE">
-                                <rect key="frame" x="253" y="533" width="95" height="30"/>
+                                <rect key="frame" x="253" y="509" width="95" height="30"/>
                                 <state key="normal" title="Calibrate/Test">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="testSpheroButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u24-wY-Sdt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hej-ps-zho">
+                                <rect key="frame" x="210" y="255" width="180" height="90"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="125-tx-Gel"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="RAc-7X-EFy"/>
+                                    <constraint firstAttribute="height" constant="90" id="bcL-tF-WPI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="jZX-l5-nbZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Start Game!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hk4-il-TmL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,17 +261,30 @@
                             <constraint firstAttribute="centerX" secondItem="Ah4-uN-GlE" secondAttribute="centerX" id="2JF-d4-HhE"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ah4-uN-GlE" secondAttribute="bottom" constant="37" id="3qe-O4-Mmd"/>
                             <constraint firstItem="Ah4-uN-GlE" firstAttribute="top" secondItem="84q-7w-S87" secondAttribute="bottom" constant="384" id="9hO-jw-U1h"/>
-                            <constraint firstAttribute="centerX" secondItem="XSN-oo-Jii" secondAttribute="centerX" constant="-0.5" id="ADP-dE-C0x"/>
+                            <constraint firstAttribute="centerX" secondItem="XSN-oo-Jii" secondAttribute="centerX" id="ADP-dE-C0x"/>
+                            <constraint firstAttribute="centerY" secondItem="hej-ps-zho" secondAttribute="centerY" id="BWU-jV-2Xn"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L43-nA-vOV" secondAttribute="bottom" constant="20" id="Bfh-qs-Qh1"/>
                             <constraint firstItem="L43-nA-vOV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="507" id="DWC-Ur-L8f"/>
                             <constraint firstAttribute="centerX" secondItem="L43-nA-vOV" secondAttribute="centerX" id="JMn-KE-P6e"/>
-                            <constraint firstAttribute="centerX" secondItem="84q-7w-S87" secondAttribute="centerX" constant="-0.5" id="szB-VZ-YuG"/>
-                            <constraint firstItem="XSN-oo-Jii" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="uVa-hG-x2u"/>
+                            <constraint firstAttribute="centerX" secondItem="hej-ps-zho" secondAttribute="centerX" id="YKH-sO-ekj"/>
+                            <constraint firstAttribute="centerX" secondItem="84q-7w-S87" secondAttribute="centerX" id="szB-VZ-YuG"/>
+                            <constraint firstItem="XSN-oo-Jii" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="uVa-hG-x2u"/>
+                            <constraint firstItem="84q-7w-S87" firstAttribute="top" secondItem="XSN-oo-Jii" secondAttribute="bottom" constant="14.5" id="wKN-u8-553"/>
+                            <constraint firstItem="L43-nA-vOV" firstAttribute="top" secondItem="Ah4-uN-GlE" secondAttribute="bottom" constant="20" id="z7c-bB-3bH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9hO-jw-U1h"/>
+                                <exclude reference="DWC-Ur-L8f"/>
+                                <exclude reference="3qe-O4-Mmd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="rB2-at-Aa7"/>
                     <connections>
                         <outlet property="currentGameLabel" destination="XSN-oo-Jii" id="kOd-CK-jlq"/>
                         <outlet property="robotConnectedLabel" destination="L43-nA-vOV" id="B1a-f9-iqa"/>
+                        <outlet property="startButton" destination="hej-ps-zho" id="Whq-iB-eYE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

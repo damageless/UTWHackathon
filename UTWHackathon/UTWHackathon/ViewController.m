@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentGameLabel;
 @property (nonatomic, copy) GamePlayCallback playCallback;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
 
@@ -34,6 +35,8 @@
     [self connectToRobot];
     
     [self openStreamingConnection];
+    
+    self.startButton.layer.cornerRadius = 20;
 }
 
 -(void)connectToRobot
@@ -70,6 +73,10 @@
     controller.delegate = self;
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)startButtonPressed:(id)sender
+{
 }
 
 - (void)openStreamingConnection
