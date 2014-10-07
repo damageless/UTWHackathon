@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6CC-Ht-Vb5">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="IZT-CY-H2j">
+            <objects>
+                <navigationController id="6CC-Ht-Vb5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CeZ-fz-ZJM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="hus-sZ-IYc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rT-hU-IYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="354"/>
+        </scene>
+        <!--Game Info-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Game Info" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -37,6 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rB2-at-Aa7"/>
                     <connections>
                         <outlet property="calibrateFieldButton" destination="wA2-DE-pia" id="egg-gp-dTZ"/>
                     </connections>
@@ -45,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="116" y="356"/>
         </scene>
-        <!--Calibrate Field View Controller-->
+        <!--Field Calibration-->
         <scene sceneID="Ics-AE-ycF">
             <objects>
-                <viewController storyboardIdentifier="CalibrateField" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FO3-Oq-6b5" customClass="CalibrateFieldViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalibrateField" title="Field Calibration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FO3-Oq-6b5" customClass="CalibrateFieldViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pbW-Kc-5xi"/>
                         <viewControllerLayoutGuide type="bottom" id="Ts1-hh-flG"/>
@@ -56,22 +74,8 @@
                     <view key="view" contentMode="scaleToFill" id="qtt-FB-9Lx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q03-12-1Z7">
-                                <rect key="frame" x="252" y="550" width="97" height="30"/>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissButtonTapped:" destination="FO3-Oq-6b5" eventType="touchUpInside" id="YC4-sK-YOg"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="dismissButton" destination="q03-12-1Z7" id="Imn-pY-vpA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gl-4r-DPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

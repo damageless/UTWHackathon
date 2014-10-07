@@ -42,17 +42,9 @@
     self.calibrateFieldVC.delegate = self;
     
     
-    [self presentViewController:calibrateFieldVC animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:calibrateFieldVC animated:YES];
 }
 
-- (BOOL)shouldDismissCalibrateFieldView
-{
-    return YES;
-}
-
-- (void)dismissCalibrateFieldView
-{
-    [self.calibrateFieldVC dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end
