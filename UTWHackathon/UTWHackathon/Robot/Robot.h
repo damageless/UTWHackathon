@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <RobotKit/RobotKit.h>
 
+#define RobotMoveNotification @"RobotMoved"
+
 typedef enum {
     Forward,
     Backward,

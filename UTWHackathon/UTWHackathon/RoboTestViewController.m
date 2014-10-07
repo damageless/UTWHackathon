@@ -9,6 +9,7 @@
 #import "RoboTestViewController.h"
 #import <RobotKit/RobotKit.h>
 #import "AppDelegate.h"
+#import "Robot/Robot.h"
 
 @interface RoboTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
@@ -36,7 +37,11 @@
 	[self.goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(robotMoved) name:RobotMoveNotification object:nil];
+}
 - (IBAction)forwardButtonPressed:(id)sender {
     [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
     [self performSelector:@selector(stop) withObject:nil afterDelay:0.4];
@@ -58,6 +63,13 @@
 }
 - (IBAction)blueColorButtonPressed:(id)sender {
 	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
+}
+
+- (void)robotMoved
+{
+	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
+	float currentLocation = [robo getLocation].x;
+	self.destinationField.text = [NSString stringWithFormat:@"%f",currentLocation];
 }
 
 
