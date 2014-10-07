@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RobotKit/RobotKit.h>
-
-BOOL robotOnline;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
--(void)setupRobotConnection;
--(void)handleRobotOnline;
+
 
 @end
+

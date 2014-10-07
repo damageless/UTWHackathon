@@ -14,11 +14,8 @@
 		3229DBBF19E45632002624EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBBE19E45632002624EA /* Images.xcassets */; };
 		3229DBC219E45632002624EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3229DBC019E45632002624EA /* LaunchScreen.xib */; };
 		3229DBCE19E45632002624EA /* UTWHackathonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3229DBCD19E45632002624EA /* UTWHackathonTests.m */; };
-		3229DBE019E46159002624EA /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBDE19E46159002624EA /* RobotKit.framework */; };
-		3229DBE119E46159002624EA /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBDF19E46159002624EA /* RobotUIKit.framework */; };
-		3229DBE319E46163002624EA /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBE219E46163002624EA /* RobotUIKit.bundle */; };
-		3229DBE519E46229002624EA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBE419E46229002624EA /* ExternalAccessory.framework */; };
-		3229DBE719E4622E002624EA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBE619E4622E002624EA /* CoreMotion.framework */; };
+		3229DBD819E4567D002624EA /* orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip in Frameworks */ = {isa = PBXBuildFile; fileRef = 3229DBD719E4567D002624EA /* orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip */; };
+		D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +43,8 @@
 		3229DBCC19E45632002624EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3229DBCD19E45632002624EA /* UTWHackathonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTWHackathonTests.m; sourceTree = "<group>"; };
 		3229DBD719E4567D002624EA /* orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip"; path = "../orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip"; sourceTree = "<group>"; };
-		3229DBDE19E46159002624EA /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = "../orbotix-Sphero-iOS-SDK-642e439/frameworks/RobotKit.framework"; sourceTree = "<group>"; };
-		3229DBDF19E46159002624EA /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = "../orbotix-Sphero-iOS-SDK-642e439/frameworks/RobotUIKit.framework"; sourceTree = "<group>"; };
-		3229DBE219E46163002624EA /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = "../orbotix-Sphero-iOS-SDK-642e439/frameworks/RobotUIKit.bundle"; sourceTree = "<group>"; };
-		3229DBE419E46229002624EA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		3229DBE619E4622E002624EA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateFieldViewController.h; sourceTree = "<group>"; };
+		D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateFieldViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3229DBE719E4622E002624EA /* CoreMotion.framework in Frameworks */,
-				3229DBE519E46229002624EA /* ExternalAccessory.framework in Frameworks */,
-				3229DBE019E46159002624EA /* RobotKit.framework in Frameworks */,
-				3229DBE119E46159002624EA /* RobotUIKit.framework in Frameworks */,
-				3229DBE319E46163002624EA /* RobotUIKit.bundle in Frameworks */,
+				3229DBD819E4567D002624EA /* orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,11 +69,6 @@
 		3229DBA519E45632002624EA = {
 			isa = PBXGroup;
 			children = (
-				3229DBE619E4622E002624EA /* CoreMotion.framework */,
-				3229DBE419E46229002624EA /* ExternalAccessory.framework */,
-				3229DBE219E46163002624EA /* RobotUIKit.bundle */,
-				3229DBDE19E46159002624EA /* RobotKit.framework */,
-				3229DBDF19E46159002624EA /* RobotUIKit.framework */,
 				3229DBD719E4567D002624EA /* orbotix-Sphero-iOS-SDK-v1.6-b1146-6-g642e439.zip */,
 				3229DBB019E45632002624EA /* UTWHackathon */,
 				3229DBCA19E45632002624EA /* UTWHackathonTests */,
@@ -110,6 +95,8 @@
 				3229DBBB19E45632002624EA /* Main.storyboard */,
 				3229DBBE19E45632002624EA /* Images.xcassets */,
 				3229DBC019E45632002624EA /* LaunchScreen.xib */,
+				D2D7B68319E4617C00F91CD2 /* CalibrateFieldViewController.h */,
+				D2D7B68419E4617C00F91CD2 /* CalibrateFieldViewController.m */,
 				3229DBB119E45632002624EA /* Supporting Files */,
 			);
 			path = UTWHackathon;
@@ -244,6 +231,7 @@
 				3229DBBA19E45632002624EA /* ViewController.m in Sources */,
 				3229DBB719E45632002624EA /* AppDelegate.m in Sources */,
 				3229DBB419E45632002624EA /* main.m in Sources */,
+				D2D7B68519E4617C00F91CD2 /* CalibrateFieldViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +277,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -323,14 +310,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -338,7 +318,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -365,15 +344,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -381,15 +353,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/agessel/Dev/UTWHackathon/orbotix-Sphero-iOS-SDK-642e439/frameworks",
-				);
 				INFOPLIST_FILE = UTWHackathon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -397,15 +363,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/agessel/Dev/UTWHackathon/orbotix-Sphero-iOS-SDK-642e439/frameworks",
-				);
 				INFOPLIST_FILE = UTWHackathon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
