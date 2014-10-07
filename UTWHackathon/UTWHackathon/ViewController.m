@@ -57,6 +57,13 @@
     [self.navigationController pushViewController:roboTestVC animated:YES];
 }
 
+- (IBAction)gameSelectionButtonTapped:(id)sender
+{
+    RoboTestViewController *roboTestVC = (RoboTestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    
+    [self.navigationController pushViewController:roboTestVC animated:YES];
+}
+
 - (void)openStreamingConnection
 {
     NSString *url = @"http://spherosport.herokuapp.com/games";
