@@ -12,9 +12,9 @@
 #define RobotMoveNotification @"RobotMoved"
 
 typedef enum {
+    Stop,
     Forward,
-    Backward,
-    Stop = 0
+    Backward
 } State;
 
 @interface Robot : NSObject
