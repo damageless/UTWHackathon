@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
+#import "SocketRocket/SRWebSocket.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
 
