@@ -64,6 +64,7 @@
 - (IBAction)gameSelectionButtonTapped:(id)sender
 {
     GameSelectionViewController *controller = (GameSelectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GameSelection"];
+    controller.delegate = self;
     
     [self.navigationController pushViewController:controller animated:YES];
 }
