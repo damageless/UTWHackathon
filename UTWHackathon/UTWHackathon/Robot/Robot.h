@@ -12,6 +12,7 @@
 
 @property (assign, nonatomic) RKQuaternionData* quaternion;
 @property (assign, nonatomic) RKAccelerometerData* accelerometerData;
+@property (assign, nonatomic) RKLocatorData* locatorData;
 @property (assign, nonatomic) BOOL isOnline;
 
 @end

@@ -35,7 +35,7 @@
 
 - (IBAction)forwardButtonPressed:(id)sender {
     [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
-    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:0.4];
 }
 - (IBAction)stopButtonPressed:(id)sender {
     [self stop];
@@ -46,8 +46,8 @@
 }
 
 - (IBAction)backwardButtonPressed:(id)sender {
-    [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
-    [self performSelector:@selector(stop) withObject:nil afterDelay:2.0];
+    [RKRollCommand sendCommandWithHeading:180.0 velocity:0.5];
+    [self performSelector:@selector(stop) withObject:nil afterDelay:0.4];
 }
 - (IBAction)redColorButtonPressed:(id)sender {
 	[RKRGBLEDOutputCommand sendCommandWithRed:1.0 green :0.0 blue :0.0];
