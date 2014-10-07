@@ -57,24 +57,4 @@
 	[RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :0.0 blue :1.0];
 }
 
-
-- (IBAction)setSide0ButtonTapped:(id)sender
-{
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-//    if (appDelegate.robot.) {
-//        [self.delegate setSide0:appDelegate.robot.quaternion];
-//    }
-    
-}
-
-- (IBAction)setSide1ButtonTapped:(id)sender
-{
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-//    if (appDelegate.robot.quaternion) {
-//        [self.delegate setSide1:appDelegate.robot.quaternion];
-//    }
-}
-
 @end
