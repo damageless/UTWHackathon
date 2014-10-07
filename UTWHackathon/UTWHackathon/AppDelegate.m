@@ -46,7 +46,7 @@
 
 -(void)connectToRobot
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline:) name:RKDeviceConnectionOnlineNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
     if ([[RKRobotProvider sharedRobotProvider] isRobotUnderControl])
     {
         [[RKRobotProvider sharedRobotProvider] openRobotConnection];
