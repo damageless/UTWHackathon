@@ -11,9 +11,6 @@
 @protocol CalibrateFieldDelegate <NSObject>
 
 
-- (BOOL)shouldDismissCalibrateFieldView;
-- (void)dismissCalibrateFieldView;
-
 @end
 
 @interface CalibrateFieldViewController : UIViewController

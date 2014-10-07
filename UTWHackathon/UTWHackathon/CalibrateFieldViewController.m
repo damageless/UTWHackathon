@@ -10,17 +10,11 @@
 
 @interface CalibrateFieldViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
-
 @end
 
 @implementation CalibrateFieldViewController
 
-- (IBAction)dismissButtonTapped:(id)sender
-{
-    if ([self.delegate shouldDismissCalibrateFieldView]) {
-        [self.delegate dismissCalibrateFieldView];
-    }
-}
+
+
 
 @end
