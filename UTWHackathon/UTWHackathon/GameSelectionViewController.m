@@ -23,11 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self getGameList];
+    [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
+
     // Do any additional setup after loading the view.
     [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
-    [self getGameList];
-    
-    [self getGameInfo:@"FFC97706-E3B3-4224-B602-DD7EBF9D32A6"];
 }
 
 - (void)didReceiveMemoryWarning {
