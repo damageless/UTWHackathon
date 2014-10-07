@@ -18,8 +18,6 @@
 
 - (IBAction)calibrateFieldButtonTapped:(id)sender;
 
-
-
 @end
 
 @implementation ViewController
