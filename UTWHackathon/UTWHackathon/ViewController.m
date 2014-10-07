@@ -10,6 +10,7 @@
 #import "CalibrateFieldViewController.h"
 #import "GameSelectionViewController.h"
 #import <RobotKit/RobotKit.h>
+#import "SocketRocket/SRWebSocket.h"
 #import "Robot/Robot.h"
 
 @interface ViewController () <CalibrateFieldDelegate, GameSelectionDelegate>
