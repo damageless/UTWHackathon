@@ -20,13 +20,14 @@
 -(void)setLocatorData:(RKLocatorData *)locatorData
 {
     _locatorData = locatorData;
+	[[NSNotificationCenter defaultCenter] postNotificationName:RobotMoveNotification object:nil];
     [self checkShouldStop];
 }
 
 -(void)checkShouldStop
 {
-    if ((_state == Forward && _locatorData.position.x > _destination) ||
-        (_state == Backward && _locatorData.position.x < _destination))
+    if ((_state == Forward && _locatorData.position.y > _destination) ||
+        (_state == Backward && _locatorData.position.y < _destination))
     {
         // stop
         [RKRollCommand sendStop];
@@ -34,10 +35,10 @@
     }
 }
 
--(void)move: (int) x
+-(void)move: (NSInteger) x
 {
     _destination = x;
-    if (x - self.locatorData.position.x > 0) {
+    if (x - self.locatorData.position.y > 0) {
         // forward
         [RKRollCommand sendCommandWithHeading:0.0 velocity:VELOCITY];
         _state = Forward;

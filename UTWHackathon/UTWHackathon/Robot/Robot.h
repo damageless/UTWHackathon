@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <RobotKit/RobotKit.h>
 
+#define RobotMoveNotification @"RobotMoved"
+
 typedef enum {
     Forward,
     Backward,
@@ -21,9 +23,9 @@ typedef enum {
 @property (strong, nonatomic) RKLocatorData* locatorData;
 @property (assign, nonatomic) BOOL isOnline;
 @property (assign, nonatomic) State state;
-@property (assign, nonatomic) int destination;
+@property (assign, nonatomic) NSInteger destination;
 
--(void) move: (int) x;
+-(void) move: (NSInteger) x;
 -(void) setCenter;
 -(RKLocatorPosition) getLocation;
 
