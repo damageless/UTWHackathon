@@ -191,7 +191,7 @@
         <!--GameSelection-->
         <scene sceneID="2ZV-BF-PbF">
             <objects>
-                <viewController storyboardIdentifier="GameSelection" title="GameSelection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GwR-du-6FH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameSelection" title="GameSelection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GwR-du-6FH" customClass="GameSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jc8-dQ-xJP"/>
                         <viewControllerLayoutGuide type="bottom" id="qyF-Zr-dYV"/>
@@ -213,6 +213,9 @@
                             <constraint firstItem="cJp-mq-NFp" firstAttribute="leading" secondItem="paS-1W-lfq" secondAttribute="leadingMargin" constant="-16" id="nBH-TP-QUH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cJp-mq-NFp" id="tMQ-LG-s6f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZD-zW-IQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
