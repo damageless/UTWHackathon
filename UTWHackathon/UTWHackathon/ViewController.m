@@ -29,12 +29,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
     [self connectToRobot];
+    
+    
 }
 
 -(void)connectToRobot
 {
     [self.robotConnectedLabel setText:@"Connecting to Robot..."];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRobotOnline) name:RKDeviceConnectionOnlineNotification object:nil];
     if ([[RKRobotProvider sharedRobotProvider] isRobotUnderControl])
     {
         [[RKRobotProvider sharedRobotProvider] openRobotConnection];
