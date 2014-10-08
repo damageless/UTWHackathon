@@ -75,9 +75,12 @@
 - (IBAction)startButtonPressed:(id)sender
 {
     GameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"GameView"];
+    controller.gameData = self.currentGameData;
+    
     controller.currentGameData = self.currentGameData;
     [self.navigationController pushViewController:controller animated:YES];
 }
+
 
 #pragma mark - GameSelectionDelegate
 

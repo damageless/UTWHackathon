@@ -7,10 +7,12 @@
 //
 
 #import "GameViewController.h"
+#import "AppDelegate.h"
 #import "GamePlay.h"
 
 @interface GameViewController ()
 
+@property (readonly, nonatomic) Robot* robot;
 @property (weak, nonatomic) IBOutlet UILabel *homeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestLabel;
@@ -24,6 +26,12 @@
 - (void)stopGameStream;
 
 @end
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
 
 @implementation GameViewController
 
@@ -48,6 +56,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)openStreamingConnection
 {
     NSString *url = @"ws://spherosport.herokuapp.com/stream";
@@ -59,9 +68,16 @@
     [socket open];
 }
 
+- (Robot*)robot
+{
+    return [(AppDelegate *)[[UIApplication sharedApplication] delegate] robot];
+}
+
+
 - (void)startGameStream:(NSString *)gameId callback:(GamePlayCallback)block
 {
-    if (self.webSocket) {
+
+    if (self.webSocket){
         self.playCallback = block;
         
         NSDictionary *startCommand = @{
@@ -77,8 +93,9 @@
     }
 }
 
-- (void)stopGameStream
+- (void)setPlay:(GamePlay *)play
 {
+    NSLog(@"Received Play: %@", play);
     if (self.webSocket) {
         NSDictionary *stopCommand = @{
                                       @"command": @"stop",
@@ -89,6 +106,11 @@
         
     }
     
+    if ([play.possession isEqualToString:@"home"]) {
+        [self.robot setColor:self.gameData.team0Color];
+    } else {
+        [self.robot setColor:self.gameData.team1Color];
+    }
     self.playCallback = nil;
 }
 
