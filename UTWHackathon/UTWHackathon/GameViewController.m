@@ -121,6 +121,7 @@ alpha:1.0]
                             JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding]
                             options:0
                             error:&error];
+    NSLog(@"message: %@", object);
     
     if (!error) {
         GamePlay *play = [[GamePlay alloc] init];
