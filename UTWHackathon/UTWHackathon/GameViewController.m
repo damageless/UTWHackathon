@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "GamePlay.h"
 
 @interface GameViewController ()
 
@@ -16,13 +17,28 @@
 @property (weak, nonatomic) IBOutlet UILabel *guestScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playStatusLabel;
 
+@property (strong, nonatomic) SRWebSocket *webSocket;
+@property (nonatomic, copy) GamePlayCallback playCallback;
+
+- (void)startGameStream:(NSString *)gameId callback:(GamePlayCallback)block;
+- (void)stopGameStream;
+
 @end
 
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.homeLabel.text = self.currentGameData.team0Name;
+    self.guestLabel.text = self.currentGameData.team1Name;
+    
+    [self openStreamingConnection];
+/*    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
+        NSLog(@"Received Play: %@", play);
+        self.playStatusLabel.text = play.
+    }];*/
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +46,96 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)openStreamingConnection
+{
+    NSString *url = @"ws://spherosport.herokuapp.com/stream";
+    NSLog(@"Making server request");
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:request];
+    socket.delegate = self;
+    
+    [socket open];
 }
-*/
+
+- (void)startGameStream:(NSString *)gameId callback:(GamePlayCallback)block
+{
+    if (self.webSocket) {
+        self.playCallback = block;
+        
+        NSDictionary *startCommand = @{
+                                       @"command": @"start",
+                                       @"game_id": gameId,
+                                       @"speed": @2
+                                       
+                                       };
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:startCommand options:0 error:&error];
+        [self.webSocket send:data];
+        
+    }
+}
+
+- (void)stopGameStream
+{
+    if (self.webSocket) {
+        NSDictionary *stopCommand = @{
+                                      @"command": @"stop",
+                                      };
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:stopCommand options:0 error:&error];
+        [self.webSocket send:data];
+        
+    }
+    
+    self.playCallback = nil;
+}
+
+#pragma mark - SRWebSocketDelegate
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    
+    NSError *error;
+    NSDictionary *object = [NSJSONSerialization
+                            JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding]
+                            options:0
+                            error:&error];
+    
+    if (!error) {
+        GamePlay *play = [[GamePlay alloc] init];
+        play.playDescription = object[@"result_description"];
+        play.locationDescription = object[@"location_description"];
+        play.scoreAway = object[@"away_score"];
+        play.scoreHome = object[@"home_score"];
+        play.quarter = object[@"quarter"];
+        play.down = object[@"down"];
+        play.distance = object[@"distance"];
+        play.yardLine = object[@"yardLine"];
+        play.possession = object[@"posession"];
+        play.type = object[@"type"];
+        play.specialType = object[@"special_type"];
+        
+        if (self.playCallback) {
+            self.playCallback(play);
+        }
+    }
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@"socket failed with error: %@", error);
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    self.webSocket = webSocket;
+    //TODO: close socket
+    //[socket close];
+    
+}
+//optional:
+//- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
+//- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
+//- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 
 @end
