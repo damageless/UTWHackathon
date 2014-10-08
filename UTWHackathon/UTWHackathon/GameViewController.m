@@ -182,12 +182,35 @@ alpha:1.0]
             self.guestPossessionIcon.hidden = NO;
 
         }
-        
+		
+		
+		UIColor* teamColor;
+		if ([play.possession isEqualToString:@"home"]) {
+			teamColor = self.gameData.team0Color;
+		} else {
+			teamColor = self.gameData.team1Color;
+		}
+		
         [self.robot move:[play.yardLine integerValue]];
-        
+		
+		if ([play.specialType isEqualToString:@"touchdown"]){
+			[self touchdown:teamColor];
+		}
     }];
 
-    
+	
+}
+
+- (void)touchdown:(UIColor*)color
+{
+	UIColor* defaultColor = [UIColor blackColor];
+	float delay = 0.3;
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*2];
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*3];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*4];
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*5];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*6];
 }
 //optional:
 //- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
