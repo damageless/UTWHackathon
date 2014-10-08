@@ -13,6 +13,7 @@
 
 typedef enum {
     Stop,
+    Stopping,
     Forward,
     Backward
 } State;

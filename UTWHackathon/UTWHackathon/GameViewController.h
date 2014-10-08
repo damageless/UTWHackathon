@@ -16,5 +16,6 @@
 @property (strong, nonatomic) GameData* gameData;
 
 - (void)setPlay:(GamePlay*)play;
+@property (strong, nonatomic) GameData *currentGameData;
 
 @end
