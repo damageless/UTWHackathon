@@ -14,6 +14,8 @@
 
 @property (readonly, nonatomic) Robot* robot;
 @property (weak, nonatomic) IBOutlet UILabel *homeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *homePossessionIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *guestPossessionIcon;
 @property (weak, nonatomic) IBOutlet UILabel *homeScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestScoreLabel;
@@ -43,6 +45,8 @@ alpha:1.0]
     self.homeScoreLabel.text = @"0";
     self.guestLabel.text = self.currentGameData.team1Name;
     self.guestScoreLabel.text = @"0";
+    self.homePossessionIcon.hidden = YES;
+    self.guestPossessionIcon.hidden = YES;
     
     [self openStreamingConnection];
 
@@ -166,8 +170,13 @@ alpha:1.0]
         
         if ([play.possession isEqualToString:@"home"]) {
             [self.robot setColor:self.gameData.team0Color];
+            self.homePossessionIcon.hidden = NO;
+            self.guestPossessionIcon.hidden = YES;
         } else {
             [self.robot setColor:self.gameData.team1Color];
+            self.homePossessionIcon.hidden = YES;
+            self.guestPossessionIcon.hidden = NO;
+
         }
         
         [self.robot move:[play.yardLine integerValue]];
