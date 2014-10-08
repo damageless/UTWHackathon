@@ -316,9 +316,9 @@
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-qo-XUo">
-                                        <rect key="frame" x="10" y="60" width="116" height="47"/>
+                                        <rect key="frame" x="10" y="60" width="124" height="47"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="116" id="2y8-55-V8S"/>
+                                            <constraint firstAttribute="width" constant="124" id="2y8-55-V8S"/>
                                             <constraint firstAttribute="height" constant="47" id="ZNN-Jm-EQq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -326,7 +326,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7E-gP-QYI">
-                                        <rect key="frame" x="10" y="111" width="116" height="78"/>
+                                        <rect key="frame" x="10" y="111" width="124" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="78" id="PCS-7F-8tj"/>
                                             <constraint firstAttribute="width" constant="116" id="grv-V8-gn3"/>
@@ -334,15 +334,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="grv-V8-gn3"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDu-vF-SY9">
-                                        <rect key="frame" x="174" y="60" width="116" height="47"/>
+                                        <rect key="frame" x="166" y="60" width="124" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-mq-leq">
-                                        <rect key="frame" x="174" y="111" width="116" height="78"/>
+                                        <rect key="frame" x="166" y="111" width="124" height="78"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
