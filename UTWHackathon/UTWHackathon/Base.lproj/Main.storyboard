@@ -366,8 +366,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play by play status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obS-C7-x8v">
-                                        <rect key="frame" x="10" y="199" width="280" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play by play status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obS-C7-x8v">
+                                        <rect key="frame" x="10" y="229.5" width="280" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="6DN-x6-Wzk"/>
                                             <constraint firstAttribute="height" constant="24" id="7xH-h1-gfC"/>
@@ -381,12 +381,20 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball On:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vG-pI-QXI">
+                                        <rect key="frame" x="10" y="190" width="280" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="3vG-pI-QXI" firstAttribute="top" secondItem="w7E-gP-QYI" secondAttribute="bottom" constant="1" id="00M-7j-Llj"/>
                                     <constraint firstItem="eDu-vF-SY9" firstAttribute="width" secondItem="Efh-mq-leq" secondAttribute="width" id="0Fm-wq-byk"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="top" secondItem="eDu-vF-SY9" secondAttribute="top" constant="-67" id="27N-W8-J0C"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="top" secondItem="CHf-HV-afH" secondAttribute="top" constant="60" id="3mw-9G-Zc3"/>
+                                    <constraint firstItem="obS-C7-x8v" firstAttribute="top" secondItem="3vG-pI-QXI" secondAttribute="bottom" constant="8" id="9Yj-vH-LzN"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="centerY" secondItem="eDu-vF-SY9" secondAttribute="centerY" id="Hl8-zg-zb4"/>
                                     <constraint firstAttribute="width" constant="300" id="IVF-7x-vM4"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="centerX" secondItem="w7E-gP-QYI" secondAttribute="centerX" id="NOE-ON-EUH"/>
@@ -398,15 +406,18 @@
                                     <constraint firstAttribute="height" constant="300" id="Xim-Fv-wOx"/>
                                     <constraint firstItem="w7E-gP-QYI" firstAttribute="height" secondItem="Efh-mq-leq" secondAttribute="height" id="bwU-Jt-Llu"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="leading" secondItem="CHf-HV-afH" secondAttribute="leading" constant="10" id="dC0-ep-Sjy"/>
+                                    <constraint firstItem="3vG-pI-QXI" firstAttribute="leading" secondItem="CHf-HV-afH" secondAttribute="leading" constant="10" id="f0z-SQ-Gi7"/>
                                     <constraint firstItem="obS-C7-x8v" firstAttribute="leading" secondItem="CHf-HV-afH" secondAttribute="leading" constant="10" id="nxv-y4-OCA"/>
                                     <constraint firstItem="1DX-qo-XUo" firstAttribute="height" secondItem="eDu-vF-SY9" secondAttribute="height" id="p15-iY-PWG"/>
                                     <constraint firstItem="w7E-gP-QYI" firstAttribute="top" secondItem="1DX-qo-XUo" secondAttribute="bottom" constant="4" id="rF1-aV-cZS"/>
                                     <constraint firstItem="obS-C7-x8v" firstAttribute="top" secondItem="Efh-mq-leq" secondAttribute="bottom" constant="10" id="swy-3h-1hh"/>
+                                    <constraint firstAttribute="trailing" secondItem="3vG-pI-QXI" secondAttribute="trailing" constant="10" id="upC-FA-8Ut"/>
                                     <constraint firstAttribute="trailing" secondItem="eDu-vF-SY9" secondAttribute="trailing" constant="10" id="z9M-ZC-4rL"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="27N-W8-J0C"/>
+                                        <exclude reference="swy-3h-1hh"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -423,6 +434,7 @@
                         <outlet property="homeLabel" destination="1DX-qo-XUo" id="7Xh-ws-fx6"/>
                         <outlet property="homeScoreLabel" destination="w7E-gP-QYI" id="aiL-AL-axF"/>
                         <outlet property="playStatusLabel" destination="obS-C7-x8v" id="zuf-zl-exc"/>
+                        <outlet property="yardlineLabel" destination="3vG-pI-QXI" id="scE-yC-BF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPZ-FP-lmG" userLabel="First Responder" sceneMemberID="firstResponder"/>

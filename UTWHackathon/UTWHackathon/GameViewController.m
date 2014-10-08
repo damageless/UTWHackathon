@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *guestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yardlineLabel;
 
 @property (strong, nonatomic) SRWebSocket *webSocket;
 @property (nonatomic, copy) GamePlayCallback playCallback;
@@ -39,7 +40,9 @@ alpha:1.0]
     [super viewDidLoad];
     
     self.homeLabel.text = self.currentGameData.team0Name;
+    self.homeScoreLabel.text = @"0";
     self.guestLabel.text = self.currentGameData.team1Name;
+    self.guestScoreLabel.text = @"0";
     
     [self openStreamingConnection];
 
@@ -77,7 +80,7 @@ alpha:1.0]
         NSDictionary *startCommand = @{
                                        @"command": @"start",
                                        @"game_id": gameId,
-                                       @"speed": @2
+                                       @"speed": @5
                                        
                                        };
         NSError *error;
