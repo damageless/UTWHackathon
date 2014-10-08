@@ -203,7 +203,7 @@ alpha:1.0]
 
 - (void)touchdown:(UIColor*)color
 {
-	UIColor* defaultColor = [UIColor blackColor];
+	UIColor* defaultColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
 	float delay = 0.3;
 	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay];
 	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*2];
@@ -211,6 +211,12 @@ alpha:1.0]
 	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*4];
 	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*5];
 	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*6];
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*7];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*8];
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*9];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*10];
+	[self.robot performSelector:@selector(setColor:) withObject:defaultColor afterDelay:delay*11];
+	[self.robot performSelector:@selector(setColor:) withObject:color afterDelay:delay*12];
 }
 //optional:
 //- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
