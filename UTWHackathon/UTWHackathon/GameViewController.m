@@ -47,6 +47,13 @@ alpha:1.0]
         self.homeScoreLabel.text = play.scoreHome.stringValue;
         self.guestScoreLabel.text = play.scoreAway.stringValue;
         self.playStatusLabel.text = play.description;
+        
+        if ([play.possession isEqualToString:@"home"]) {
+            [self.robot setColor:self.gameData.team0Color];
+        } else {
+            [self.robot setColor:self.gameData.team1Color];
+        }
+
     }];
 
 }
@@ -93,9 +100,11 @@ alpha:1.0]
     }
 }
 
-- (void)setPlay:(GamePlay *)play
+- (void)stopGameStream
 {
-    NSLog(@"Received Play: %@", play);
+    
+    self.playCallback = nil;
+    
     if (self.webSocket) {
         NSDictionary *stopCommand = @{
                                       @"command": @"stop",
@@ -105,14 +114,8 @@ alpha:1.0]
         [self.webSocket send:data];
         
     }
-    
-    if ([play.possession isEqualToString:@"home"]) {
-        [self.robot setColor:self.gameData.team0Color];
-    } else {
-        [self.robot setColor:self.gameData.team1Color];
-    }
-    self.playCallback = nil;
 }
+
 
 #pragma mark - SRWebSocketDelegate
 
