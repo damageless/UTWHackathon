@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 @property (weak, nonatomic) IBOutlet UITextField *destinationField;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *batteryStateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *batteryButton;
 
 @end
 
@@ -36,16 +38,22 @@
 	[self.blueColorButton addTarget:self action:@selector(blueColorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[self.goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+
     Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
     
     [robo setCenter];
     
+
+	
+	[self.batteryButton addTarget:self action:@selector(getPowerState) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(robotMoved) name:RobotMoveNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryChanged) name:RobotBatteryNotification object:nil];
 }
 - (IBAction)forwardButtonPressed:(id)sender {
     [RKRollCommand sendCommandWithHeading:0.0 velocity:0.5];
@@ -87,5 +95,17 @@
 	NSInteger dest = [self.destinationField.text integerValue];
 	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
 	[robo move:dest];
+}
+
+- (void)batteryChanged
+{
+	Robot* robo = ((AppDelegate*)[UIApplication sharedApplication].delegate).robot;
+	
+	self.batteryStateLabel.text = [robo batterStateString];
+}
+
+- (void)getPowerState
+{
+	[RKGetPowerStateCommand sendCommand];
 }
 @end

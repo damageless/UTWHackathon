@@ -10,6 +10,7 @@
 #import <RobotKit/RobotKit.h>
 
 #define RobotMoveNotification @"RobotMoved"
+#define RobotBatteryNotification @"RobotBattery"
 
 typedef enum {
     Stop,
@@ -31,4 +32,8 @@ typedef enum {
 -(void)setColor:(UIColor*)color;
 -(RKLocatorPosition) getLocation;
 - (NSString *)stateAsString;
+
+
+- (NSString *)batterStateString;
+- (void)getPowerState;
 @end
