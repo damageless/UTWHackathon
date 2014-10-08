@@ -64,7 +64,7 @@
 }
 
 - (void)stop {
-    [RKRollCommand sendStop];
+//    [RKRollCommand sendStop];
 }
 
 - (IBAction)backwardButtonPressed:(id)sender {

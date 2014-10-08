@@ -15,7 +15,7 @@
 
 @implementation Robot
 
-#define VELOCITY 0.2
+#define VELOCITY 0.3
 
 - (instancetype)init
 {
@@ -33,23 +33,25 @@
 
 -(void)setLocatorData:(RKLocatorData *)locatorData
 {
+
     _locatorData = locatorData;
 	[[NSNotificationCenter defaultCenter] postNotificationName:RobotMoveNotification object:nil];
     [self checkShouldStop];
     
-    if (locatorData.velocity.y == 0.0 && locatorData.velocity.x == 0 && _state == Stopping) {
-        [RKConfigureLocatorCommand sendCommandForFlag:RKConfigureLocatorRotateWithCalibrateFlagOff newX:0 newY:_destination newYaw:0];
+    if (locatorData.velocity.y == 0.0 && _state == Stopping) {
+        [RKConfigureLocatorCommand sendCommandForFlag:RKConfigureLocatorRotateWithCalibrateFlagOn newX:0 newY:_destination newYaw:0];
         _state = Stop;
+        NSLog(@"State is stopped");
     }
 }
 
 -(void)checkShouldStop
 {
+
     if ((_state == Forward && _locatorData.position.y >= _destination) ||
         (_state == Backward && _locatorData.position.y <= _destination))
     {
         // stop
-        NSLog(@"%f", self.getLocation.y);
         [RKRollCommand sendStop];
         NSLog(@"Sending stop command");
         _state = Stopping;
