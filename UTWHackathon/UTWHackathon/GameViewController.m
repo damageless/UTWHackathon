@@ -42,19 +42,6 @@ alpha:1.0]
     self.guestLabel.text = self.currentGameData.team1Name;
     
     [self openStreamingConnection];
-    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
-        NSLog(@"Received Play: %@", play);
-        self.homeScoreLabel.text = play.scoreHome.stringValue;
-        self.guestScoreLabel.text = play.scoreAway.stringValue;
-        self.playStatusLabel.text = play.description;
-        
-        if ([play.possession isEqualToString:@"home"]) {
-            [self.robot setColor:self.gameData.team0Color];
-        } else {
-            [self.robot setColor:self.gameData.team1Color];
-        }
-
-    }];
 
 }
 
@@ -158,6 +145,21 @@ alpha:1.0]
     self.webSocket = webSocket;
     //TODO: close socket
     //[socket close];
+    
+    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
+        NSLog(@"Received Play: %@", play);
+        self.homeScoreLabel.text = play.scoreHome.stringValue;
+        self.guestScoreLabel.text = play.scoreAway.stringValue;
+        self.playStatusLabel.text = play.description;
+        
+        if ([play.possession isEqualToString:@"home"]) {
+            [self.robot setColor:self.gameData.team0Color];
+        } else {
+            [self.robot setColor:self.gameData.team1Color];
+        }
+        
+    }];
+
     
 }
 //optional:
