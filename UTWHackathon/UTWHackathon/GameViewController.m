@@ -14,10 +14,13 @@
 
 @property (readonly, nonatomic) Robot* robot;
 @property (weak, nonatomic) IBOutlet UILabel *homeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *homePossessionIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *guestPossessionIcon;
 @property (weak, nonatomic) IBOutlet UILabel *homeScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yardlineLabel;
 
 @property (strong, nonatomic) SRWebSocket *webSocket;
 @property (nonatomic, copy) GamePlayCallback playCallback;
@@ -39,7 +42,11 @@ alpha:1.0]
     [super viewDidLoad];
     
     self.homeLabel.text = self.currentGameData.team0Name;
+    self.homeScoreLabel.text = @"0";
     self.guestLabel.text = self.currentGameData.team1Name;
+    self.guestScoreLabel.text = @"0";
+    self.homePossessionIcon.hidden = YES;
+    self.guestPossessionIcon.hidden = YES;
     
     [self openStreamingConnection];
 
@@ -77,7 +84,7 @@ alpha:1.0]
         NSDictionary *startCommand = @{
                                        @"command": @"start",
                                        @"game_id": gameId,
-                                       @"speed": @2
+                                       @"speed": @5
                                        
                                        };
         NSError *error;
@@ -124,7 +131,7 @@ alpha:1.0]
         play.quarter = object[@"quarter"];
         play.down = object[@"down"];
         play.distance = object[@"distance"];
-        play.yardLine = object[@"yardLine"];
+        play.yardLine = object[@"yard_line"];
         play.possession = object[@"posession"];
         play.type = object[@"type"];
         play.specialType = object[@"special_type"];
@@ -148,14 +155,28 @@ alpha:1.0]
     
     [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
         NSLog(@"Received Play: %@", play);
-        self.homeScoreLabel.text = play.scoreHome.stringValue;
-        self.guestScoreLabel.text = play.scoreAway.stringValue;
-        self.playStatusLabel.text = play.description;
+        if (play.scoreHome != nil) {
+            self.homeScoreLabel.text = play.scoreHome.stringValue;
+        }
+        if (play.scoreAway != nil) {
+            self.guestScoreLabel.text = play.scoreAway.stringValue;
+        }
+        if (play.playDescription != nil) {
+            self.playStatusLabel.text = play.playDescription;
+        }
+        if (play.locationDescription != nil) {
+            self.yardlineLabel.text = [NSString stringWithFormat:@"Ball On: %@", play.locationDescription];
+        }
         
         if ([play.possession isEqualToString:@"home"]) {
             [self.robot setColor:self.gameData.team0Color];
+            self.homePossessionIcon.hidden = NO;
+            self.guestPossessionIcon.hidden = YES;
         } else {
             [self.robot setColor:self.gameData.team1Color];
+            self.homePossessionIcon.hidden = YES;
+            self.guestPossessionIcon.hidden = NO;
+
         }
         
         [self.robot move:[play.yardLine integerValue]];
