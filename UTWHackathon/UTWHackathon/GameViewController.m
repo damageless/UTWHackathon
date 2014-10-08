@@ -166,7 +166,10 @@ alpha:1.0]
             self.playStatusLabel.text = play.playDescription;
         }
         if (play.locationDescription != nil) {
-            self.yardlineLabel.text = [NSString stringWithFormat:@"Ball On: %@", play.locationDescription];
+            self.yardlineLabel.text = play.locationDescription;
+        }
+        else {
+            self.yardlineLabel.text = @"";
         }
         
         if ([play.possession isEqualToString:@"home"]) {
