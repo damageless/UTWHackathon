@@ -127,7 +127,7 @@ alpha:1.0]
         play.quarter = object[@"quarter"];
         play.down = object[@"down"];
         play.distance = object[@"distance"];
-        play.yardLine = object[@"yardLine"];
+        play.yardLine = object[@"yard_line"];
         play.possession = object[@"posession"];
         play.type = object[@"type"];
         play.specialType = object[@"special_type"];
@@ -151,9 +151,18 @@ alpha:1.0]
     
     [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
         NSLog(@"Received Play: %@", play);
-        self.homeScoreLabel.text = play.scoreHome.stringValue;
-        self.guestScoreLabel.text = play.scoreAway.stringValue;
-        self.playStatusLabel.text = play.description;
+        if (play.scoreHome != nil) {
+            self.homeScoreLabel.text = play.scoreHome.stringValue;
+        }
+        if (play.scoreAway != nil) {
+            self.guestScoreLabel.text = play.scoreAway.stringValue;
+        }
+        if (play.playDescription != nil) {
+            self.playStatusLabel.text = play.playDescription;
+        }
+        if (play.locationDescription != nil) {
+            self.yardlineLabel.text = [NSString stringWithFormat:@"Ball On: %@", play.locationDescription];
+        }
         
         if ([play.possession isEqualToString:@"home"]) {
             [self.robot setColor:self.gameData.team0Color];
