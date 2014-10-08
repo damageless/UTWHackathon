@@ -14,6 +14,7 @@
 #import "RoboTestViewController.h"
 #import "GameData.h"
 #import "GamePlay.h"
+#import "GameViewController.h"
 
 @interface ViewController () <GameSelectionDelegate>
 
@@ -77,6 +78,9 @@
 
 - (IBAction)startButtonPressed:(id)sender
 {
+    GameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"GameView"];
+    [self.navigationController pushViewController:controller animated:YES];
+    
     [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
         NSLog(@"Received Play: %@", play);
     }];

@@ -40,6 +40,7 @@
 		D86EA3E919E48369006DD644 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3DF19E48369006DD644 /* AFURLResponseSerialization.m */; };
 		D86EA3EA19E48369006DD644 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3E119E48369006DD644 /* AFURLSessionManager.m */; };
 		D86EA3ED19E489E1006DD644 /* GamePreviewData.m in Sources */ = {isa = PBXBuildFile; fileRef = D86EA3EC19E489E1006DD644 /* GamePreviewData.m */; };
+		D87FEE4819E4AFDF00697B5A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87FEE4719E4AFDF00697B5A /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		D86EA3E119E48369006DD644 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		D86EA3EB19E489E1006DD644 /* GamePreviewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePreviewData.h; sourceTree = "<group>"; };
 		D86EA3EC19E489E1006DD644 /* GamePreviewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePreviewData.m; sourceTree = "<group>"; };
+		D87FEE4619E4AFDF00697B5A /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D87FEE4719E4AFDF00697B5A /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 				3229DBB119E45632002624EA /* Supporting Files */,
 				A52FCBEF19E4A1D80041E5D3 /* GamePlay.h */,
 				A52FCBF019E4A1D80041E5D3 /* GamePlay.m */,
+				D87FEE4619E4AFDF00697B5A /* GameViewController.h */,
+				D87FEE4719E4AFDF00697B5A /* GameViewController.m */,
 			);
 			path = UTWHackathon;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87FEE4819E4AFDF00697B5A /* GameViewController.m in Sources */,
 				D86EA3E719E48369006DD644 /* AFURLConnectionOperation.m in Sources */,
 				3229DBBA19E45632002624EA /* ViewController.m in Sources */,
 				A52FCBF119E4A1D80041E5D3 /* GamePlay.m in Sources */,
