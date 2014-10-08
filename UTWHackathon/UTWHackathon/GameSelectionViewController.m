@@ -96,9 +96,11 @@
     
     if ([gamePreview.gameName isEqualToString:self.currentGameName]) {
         cell.selected = YES;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else {
         cell.selected = NO;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     return cell;
@@ -107,10 +109,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GamePreviewData *previewData = [self.gamePreviewList objectAtIndex:indexPath.row];
-    
     self.currentGameName = previewData.gameName;
-    [self.tableView reloadData];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
     [self getGameInfo:previewData.gameId withGameName:previewData.gameName];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
