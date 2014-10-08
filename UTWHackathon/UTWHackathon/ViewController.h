@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SRWebSocket.h"
-#import "GamePlay.h"
 
-typedef void (^GamePlayCallback)(GamePlay*);
-
-@interface ViewController : UIViewController <SRWebSocketDelegate>
+@interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *robotConnectedLabel;
 - (void)handleRobotOnline;
-
-- (void)startGameStream:(NSString *)gameId callback:(GamePlayCallback)block;
-- (void)stopGameStream;
 
 @end
 

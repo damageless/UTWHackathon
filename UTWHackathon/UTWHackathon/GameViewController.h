@@ -10,8 +10,13 @@
 #import "GamePlay.h"
 #import "GameData.h"
 
+#import "SRWebSocket.h"
+#import "GameData.h"
+#import "GamePlay.h"
 
-@interface GameViewController : UIViewController
+typedef void (^GamePlayCallback)(GamePlay*);
+
+@interface GameViewController : UIViewController <SRWebSocketDelegate>
 
 @property (strong, nonatomic) GameData* gameData;
 
