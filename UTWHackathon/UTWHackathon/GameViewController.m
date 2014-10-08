@@ -10,6 +10,12 @@
 
 @interface GameViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *homeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *homeScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *guestLabel;
+@property (weak, nonatomic) IBOutlet UILabel *guestScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playStatusLabel;
+
 @end
 
 @implementation GameViewController

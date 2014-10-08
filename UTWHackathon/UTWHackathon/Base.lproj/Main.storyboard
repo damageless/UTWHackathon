@@ -398,6 +398,13 @@
                             <constraint firstAttribute="centerX" secondItem="CHf-HV-afH" secondAttribute="centerX" id="f8s-AE-EuM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guestLabel" destination="eDu-vF-SY9" id="cae-af-xKc"/>
+                        <outlet property="guestScoreLabel" destination="Efh-mq-leq" id="AFl-Yi-AST"/>
+                        <outlet property="homeLabel" destination="1DX-qo-XUo" id="7Xh-ws-fx6"/>
+                        <outlet property="homeScoreLabel" destination="w7E-gP-QYI" id="aiL-AL-axF"/>
+                        <outlet property="playStatusLabel" destination="obS-C7-x8v" id="zuf-zl-exc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPZ-FP-lmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
