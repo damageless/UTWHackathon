@@ -34,10 +34,12 @@
     self.guestLabel.text = self.currentGameData.team1Name;
     
     [self openStreamingConnection];
-/*    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
+    [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
         NSLog(@"Received Play: %@", play);
-        self.playStatusLabel.text = play.
-    }];*/
+        self.homeScoreLabel.text = play.scoreHome.stringValue;
+        self.guestScoreLabel.text = play.scoreAway.stringValue;
+        self.playStatusLabel.text = play.description;
+    }];
 
 }
 
