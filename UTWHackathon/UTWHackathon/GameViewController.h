@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GamePlay.h"
+#import "GameData.h"
+
 
 @interface GameViewController : UIViewController
+
+@property (strong, nonatomic) GameData* gameData;
+
+- (void)setPlay:(GamePlay*)play;
 
 @end

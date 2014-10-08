@@ -7,10 +7,19 @@
 //
 
 #import "GameViewController.h"
+#import "AppDelegate.h"
 
 @interface GameViewController ()
 
+@property (readonly, nonatomic) Robot* robot;
+
 @end
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
 
 @implementation GameViewController
 
@@ -22,6 +31,24 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (Robot*)robot
+{
+    return [(AppDelegate *)[[UIApplication sharedApplication] delegate] robot];
+}
+
+- (void)setPlay:(GamePlay *)play
+{
+    NSLog(@"Received Play: %@", play);
+    
+    if ([play.possession isEqualToString:@"home"]) {
+        [self.robot setColor:self.gameData.team0Color];
+    } else {
+        [self.robot setColor:self.gameData.team1Color];
+    }
+
+    
 }
 
 /*

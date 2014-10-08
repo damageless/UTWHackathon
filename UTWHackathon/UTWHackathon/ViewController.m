@@ -79,10 +79,12 @@
 - (IBAction)startButtonPressed:(id)sender
 {
     GameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"GameView"];
+    controller.gameData = self.currentGameData;
+    
     [self.navigationController pushViewController:controller animated:YES];
     
     [self startGameStream:self.currentGameData.gameId callback:^(GamePlay* play) {
-        NSLog(@"Received Play: %@", play);
+        [controller setPlay:play];
     }];
 }
 

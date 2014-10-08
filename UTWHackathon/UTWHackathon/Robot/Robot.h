@@ -27,6 +27,7 @@ typedef enum {
 
 -(void) move: (NSInteger) x;
 -(void) setCenter;
+-(void)setColor:(UIColor*)color;
 -(RKLocatorPosition) getLocation;
 - (NSString *)stateAsString;
 @end

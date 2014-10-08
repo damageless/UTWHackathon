@@ -57,6 +57,16 @@
     NSLog(@"New center set.");
 }
 
+-(void)setColor:(UIColor *)color
+{
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    CGFloat red = components[0];
+    CGFloat green = components[1];
+    CGFloat blue = components[2];
+    
+    [RKRGBLEDOutputCommand sendCommandWithRed:red green:green blue:blue];
+}
+
 - (NSString *)stateAsString
 {
 	NSString* string;
