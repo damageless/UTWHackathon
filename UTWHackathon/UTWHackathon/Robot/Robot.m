@@ -7,10 +7,24 @@
 //
 
 #import "Robot.h"
+@interface Robot()
+
+@property (assign, nonatomic) RKBatteryPowerState batteryState;
+
+@end
 
 @implementation Robot
 
 #define VELOCITY 0.2
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		[[RKDeviceMessenger sharedMessenger] addResponseObserver:self selector:@selector(handleResponse:)];
+	}
+	return self;
+}
 
 -(RKLocatorPosition) getLocation
 {
@@ -96,5 +110,44 @@
 	}
     
     return string;
+}
+
+- (void)getPowerState
+{
+	[RKGetPowerStateCommand sendCommand];
+}
+
+- (void)handleResponse:(RKDeviceResponse *)response
+{
+	if ([response isKindOfClass:[RKGetPowerStateResponse class]]) {
+		RKGetPowerStateResponse *powerResponse = (RKGetPowerStateResponse*)response;
+		self.batteryState = powerResponse.powerState;
+	}
+}
+
+- (void)setBatteryState:(RKBatteryPowerState)batteryState
+{
+	_batteryState = batteryState;
+	[[NSNotificationCenter defaultCenter] postNotificationName:RobotBatteryNotification object:nil];
+}
+
+- (NSString *)batterStateString
+{
+	NSString* string;
+	switch (self.batteryState) {
+		case RKBatteryPowerStateCharging:
+			string = @"Charging";
+			break;
+		case RKBatteryPowerStateCritical:
+			string = @"Critical";
+			break;
+		case RKBatteryPowerStateLow:
+			string = @"Low";
+			break;
+		case RKBatteryPowerStateOK:
+			string = @"OK";
+			break;
+	}
+	return string;
 }
 @end
