@@ -34,6 +34,14 @@
     [self connectToRobot];
     
     self.startButton.layer.cornerRadius = 20;
+	
+	self.startButton.enabled = NO;
+}
+
+- (void)setCurrentGameData:(GameData *)currentGameData
+{
+	_currentGameData = currentGameData;
+	self.startButton.enabled = currentGameData != nil;
 }
 
 -(void)connectToRobot

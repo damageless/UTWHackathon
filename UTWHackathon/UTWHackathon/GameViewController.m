@@ -161,6 +161,8 @@ alpha:1.0]
             [self.robot setColor:self.gameData.team1Color];
         }
         
+        [self.robot move:[play.yardLine integerValue]];
+        
     }];
 
     
