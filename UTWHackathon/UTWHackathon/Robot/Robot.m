@@ -11,7 +11,6 @@
 @implementation Robot
 
 #define VELOCITY 0.2
-#define CORRECTION_AMOUNT 10
 
 -(RKLocatorPosition) getLocation
 {
